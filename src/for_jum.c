@@ -108,7 +108,7 @@ forced_jump_units_used(int attacker_index, int defender_index, int *total_shots,
     }else {
         /* Random location close to battle. */
         i = 3;
-        while (i == 3) {
+        for (;i == 3;) {
             i = rnd(5);
         }
         x = bat->x + i - 3;
@@ -117,7 +117,7 @@ forced_jump_units_used(int attacker_index, int defender_index, int *total_shots,
         }
 
         i = 3;
-        while (i == 3) {
+        for (;i == 3;) {
             i = rnd(5);
         }
         y = bat->y + i - 3;
@@ -126,7 +126,7 @@ forced_jump_units_used(int attacker_index, int defender_index, int *total_shots,
         }
 
         i = 3;
-        while (i == 3) {
+        for (;i == 3;) {
             i = rnd(5);
         }
         z = bat->z + i - 3;

@@ -201,12 +201,12 @@ find_start:
 
         /* Search for START COMBAT order. */
         found = FALSE;
-        while (!found) {
+        for (;!found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts
                  *      with "start". */
-                while (TRUE) {
+                for (;TRUE;) {
                     command = get_command();
                     if (command < 0) {
                         fprintf(stderr,
@@ -292,7 +292,7 @@ find_start:
         /* Parse all combat commands for this species and save results
          * for later use. */
         battle_index = -1;
-        while (TRUE) {
+        for (;TRUE;) {
             command = get_command();
             if (end_of_file) {
                 break;
@@ -986,7 +986,7 @@ done_orders:
                 continue;
             }
 
-            while (1) {
+            for (;;) {
                 i = x + 2 - rnd(3);
                 j = y + 2 - rnd(3);
                 k = z + 2 - rnd(3);
@@ -1099,7 +1099,7 @@ done_orders:
             }
 
             /* Copy temporary log to permanent species log. */
-            while (fgets(log_line, 256, temp_species_log) != NULL) {
+            for (;fgets(log_line, 256, temp_species_log) != NULL;) {
                 fputs(log_line, species_log);
             }
 

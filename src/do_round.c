@@ -100,7 +100,7 @@ do_round(char option, int round_number, struct battle_data *bat, struct action_d
     /* Handle all shots. */
     header_printed  = FALSE;
     combat_occurred = FALSE;
-    while (total_shots > 0) {
+    for (;total_shots > 0;) {
         /* check to make sure we arent in infinite loop
          * that usually happens when there are shots remaining
          * but the side with the shots has no more ships left*/

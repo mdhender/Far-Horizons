@@ -153,7 +153,7 @@ main(int argc, char *argv[]) {
         data_in_memory[species_index] = FALSE;
     }
 
-    while (!feof(ascii_file)) {
+    for (;!feof(ascii_file);) {
         fscanf(ascii_file, "%d\n", &n);
 
         species_number = n;

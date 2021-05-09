@@ -169,7 +169,7 @@ get_random_xyz() {
     n          = 0;
     max_checks = 25L * num_stars;
 
-    while (1) {
+    for (;;) {
         if (n++ > max_checks) {
             fprintf(stderr, "\n\tIt appears that all suitable systems are within %ld parsecs of an\n", min_distance);
             fprintf(stderr, "\texisting home system. You'll have to select a system manually.\n\n");

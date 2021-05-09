@@ -28,7 +28,7 @@ again:
         just_opened_file = FALSE;
 
         if (strncmp(input_line, "From ", 5) == 0) { /* This is a mail header. */
-            while (TRUE) {
+            for (;;) {
                 input_line_pointer = fgets(input_line, 256, input_file);
                 if (input_line_pointer == NULL) {
                     end_of_file = TRUE;         /* Weird. */
@@ -46,7 +46,7 @@ again:
     strcpy(original_line, input_line);          /* Make a copy. */
 
     /* Skip white space and comments. */
-    while (TRUE) {
+    for (;;) {
         switch (*input_line_pointer) {
         case ';':                       /* Semi-colon. */
         case '\n':                      /* Newline. */
@@ -67,7 +67,7 @@ again:
 
 void
 skip_whitespace() {
-    while (TRUE) {
+    for (;;) {
         switch (*input_line_pointer) {
         case '\t':                      /* Tab. */
         case ' ':                       /* Space. */
@@ -113,7 +113,7 @@ get_command() {
     cmd_s[3] = '\0';
 
     /* Skip everything after third character of command word. */
-    while (1) {
+    for (;;) {
         switch (c) {
         case '\t':
         case '\n':
@@ -178,7 +178,7 @@ get_class_abbr() {
     /* Check for IDs that are followed by one or more digits or letters. */
     i           = 2;
     digit_start = input_line_pointer;
-    while (isalnum(*input_line_pointer)) {
+    for (;isalnum(*input_line_pointer);) {
         input_abbr[i++] = *input_line_pointer++;
         input_abbr[i]   = '\0';
     }
@@ -209,7 +209,7 @@ get_class_abbr() {
             tonnage            = ship_tonnage[i];
             if (i == TR) {
                 tonnage = 0;
-                while (isdigit(*input_line_pointer)) {
+                for (;isdigit(*input_line_pointer);) {
                     tonnage = (10 * tonnage) + (*input_line_pointer - '0');
                     ++input_line_pointer;
                 }
@@ -258,7 +258,7 @@ get_name() {
     skip_whitespace();
 
     name_length = 0;
-    while (TRUE) {
+    for (;;) {
         c = *input_line_pointer;
         if (c == ';') {
             break;
@@ -275,7 +275,7 @@ get_name() {
     }
 
     /* Remove any final spaces in name. */
-    while (name_length > 0) {
+    for (;name_length > 0;) {
         c = original_name[name_length - 1];
         if (c != ' ') {
             break;
@@ -304,7 +304,7 @@ get_value() {
     }
     /* Skip numeric string. */
     ++input_line_pointer;       /* Skip first sign or digit. */
-    while (isdigit(*input_line_pointer)) {
+    for (;isdigit(*input_line_pointer);) {
         ++input_line_pointer;
     }
 
@@ -337,7 +337,7 @@ fix_separator() {
      *  If it is preceeded by a space, convert the space to a comma. */
     temp_ptr    = input_line_pointer;
     first_class = get_class_abbr();     /* Skip first one but remember what it was. */
-    while (1) {
+    for (;;) {
         skip_whitespace();
         temp2_ptr = input_line_pointer - 1;
         if (*input_line_pointer == '\n') {
@@ -373,7 +373,7 @@ fix_separator() {
      *  the first one back to a space; e.g. Jump TR1 Seeker,7,99,99,99 or
      *  Build TR1 Seeker,7,50. */
     num_commas = 0;
-    while (1) {
+    for (;;) {
         c = *temp_ptr++;
 
         if (c == '\n') {

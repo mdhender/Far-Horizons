@@ -437,7 +437,7 @@ log_char(char c) {
     if ((c == ' ' || c == '\n') && log_position > 77) {
         /* Find closest preceeding space. */
         temp_position = log_position - 1;
-        while (log_line[temp_position] != ' ') {
+        for (;log_line[temp_position] != ' ';) {
             --temp_position;
         }
 
@@ -671,7 +671,7 @@ log_message(char *message_filename) {
     }
 
     /* Copy message to log file. */
-    while (fgets(message_line, 256, message_file) != NULL) {
+    for (;fgets(message_line, 256, message_file) != NULL;) {
         fputs(message_line, log_file);
     }
 
@@ -827,7 +827,7 @@ agrep_score(char *correct_string, char *unknown_string) {
     p1    = correct_string;
     p2    = unknown_string;
 
-    while (1) {
+    for (;;) {
         if ((c1 = *p1++) == '\0') {
             score -= strlen(p2);        /* Reduce score by excess characters,
                                          * if any. */

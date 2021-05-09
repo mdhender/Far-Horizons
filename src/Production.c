@@ -149,12 +149,12 @@ find_start:
 
         /* Search for START PRODUCTION order. */
         found = FALSE;
-        while (!found) {
+        for (;!found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts
                  *      with "start". */
-                while (TRUE) {
+                for (;;) {
                     command = get_command();
                     if (command < 0) {
                         fprintf(stderr,
@@ -300,7 +300,7 @@ do_production_orders() {
 
     doing_production = FALSE;   /* This will be set as soon as production
                                  * actually starts. */
-    while (TRUE) {
+    for (;;) {
         command = get_command();
 
         if (command == 0) {

@@ -90,7 +90,7 @@ do_TERRAFORM_command() {
     planet_data_modified       = TRUE;
 
     /* Terraform the planet. */
-    while (num_plants > 1) {
+    for (;num_plants > 1;) {
         got_required_gas   = FALSE;
         correct_percentage = FALSE;
         for (j = 0; j < 4; j++) {     /* Check gases on planet. */
@@ -210,7 +210,7 @@ fix_gases(struct planet_data *pl) {
 
     /* Randomly modify existing non-required gases until total percentage
      *  is exactly 100. */
-    while (left != 0) {
+    for (;left != 0;) {
         i = rnd(4) - 1;
 
         if (pl->gas_percent[i] == 0) {

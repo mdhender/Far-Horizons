@@ -830,7 +830,7 @@ get_class_abbr(char *arg) {
     /* Check for IDs that are followed by one or more digits or letters. */
     i           = 2;
     digit_start = arg;
-    while (isalnum(*arg)) {
+    for (;isalnum(*arg);) {
         input_abbr[i++] = *arg++;
         input_abbr[i]   = '\0';
     }
@@ -861,7 +861,7 @@ get_class_abbr(char *arg) {
             tonnage    = ship_tonnage[i];
             if (i == TR) {
                 tonnage = 0;
-                while (isdigit(*arg)) {
+                for (;isdigit(*arg);) {
                     tonnage = (10 * tonnage) + (*arg - '0');
                     ++arg;
                 }

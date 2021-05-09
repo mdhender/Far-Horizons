@@ -565,7 +565,7 @@ do_combat:
             option == SIEGE) {
             logging_disabled = TRUE; /* Disable logging during simulation. */
         }
-        while (round_number <= max_rounds) {
+        for (;round_number <= max_rounds;) {
             if (do_withdraw_check_first) {
                 withdrawal_check(bat, &act);
             }
@@ -680,7 +680,7 @@ do_combat:
         }
 
         /* Copy combat log to temporary species log. */
-        while (fgets(log_line, 256, combat_log) != NULL) {
+        for (;fgets(log_line, 256, combat_log) != NULL;) {
             fputs(log_line, species_log);
         }
 

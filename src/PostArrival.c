@@ -147,12 +147,12 @@ find_start:
 
         /* Search for START POST-ARRIVAL order. */
         found = FALSE;
-        while (!found) {
+        for (;!found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts
                  *      with "start". */
-                while (TRUE) {
+                for (;;) {
                     command = get_command();
                     if (command < 0) {
                         fprintf(stderr,
@@ -276,7 +276,7 @@ do_postarrival_orders() {
     truncate_name = TRUE;       /* For these commands, do not display age
                                  * or landed/orbital status of ships. */
 
-    while (TRUE) {
+    for (;;) {
         command = get_command();
 
         if (command == 0) {

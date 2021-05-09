@@ -36,7 +36,7 @@ do_MESSAGE_command() {
     /* Generate a random number, create a filename with it, and use it to
      *  store message. */
     if (!first_pass && !bad_species) {
-        while (1) {
+        for (;;) {
             /* Generate a random filename. */
             message_number = rnd(32000);
             sprintf(filename, "m%d.msg\0", message_number);
@@ -62,7 +62,7 @@ do_MESSAGE_command() {
 
     /* Copy message to file. */
     unterminated_message = FALSE;
-    while (1) {
+    for (;;) {
         /* Read next line. */
         input_line_pointer = fgets(input_line, 256, input_file);
         if (input_line_pointer == NULL) {

@@ -25,7 +25,7 @@ get_transaction_data() {
 
     /* Read transactions from file. */
     i = 0;
-    while (1) {
+    for (;;) {
         num_bytes = read(trans_fd, &transaction[i], sizeof(struct trans_data));
         if (num_bytes == 0) {
             break;                      /* End of file. */

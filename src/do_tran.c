@@ -80,7 +80,7 @@ do_TRANSFER_command() {
     *  the player will accidentally omit the source if it's "obvious". */
     temp_ptr          = input_line_pointer;
     both_args_present = FALSE;
-    while (1) {
+    for (;;) {
         c = *temp_ptr++;
 
         if (c == ';' || c == '\n') {

@@ -55,7 +55,7 @@ generate_planets(struct planet_data *first_planet, int num_planets) {
 
         /* Minimum allowable diameter is 3,000 km. Note that the
          * maximum diameter we can generate is 283,000 km. */
-        while (dia < 3) {
+        for (;dia < 3;) {
             dia += rnd(4);
         }
 
@@ -107,17 +107,17 @@ generate_planets(struct planet_data *first_planet, int num_planets) {
         }
 
         if (gas_giant) {
-            while (tc < 3) {
+            for (;tc < 3;) {
                 tc += rnd(2);
             }
-            while (tc > 7) {
+            for (;tc > 7;) {
                 tc -= rnd(2);
             }
         }else {
-            while (tc < 1) {
+            for (;tc < 1;) {
                 tc += rnd(3);
             }
-            while (tc > 30) {
+            for (;tc > 30;) {
                 tc -= rnd(3);
             }
         }
@@ -125,7 +125,7 @@ generate_planets(struct planet_data *first_planet, int num_planets) {
         /* Sometimes, planets close to the sun in star systems with less
          * than four planets are too cold. Warm them up a little. */
         if (num_planets < 4 && planet_number < 3) {
-            while (tc < 12) {
+            for (;tc < 12;) {
                 tc += rnd(4);
             }
         }
@@ -157,17 +157,17 @@ generate_planets(struct planet_data *first_planet, int num_planets) {
         }
 
         if (gas_giant) {
-            while (pc < 11) {
+            for (;pc < 11;) {
                 pc += rnd(3);
             }
-            while (pc > 29) {
+            for (;pc > 29;) {
                 pc -= rnd(3);
             }
         }else {
-            while (pc < 0) {
+            for (;pc < 0;) {
                 pc += rnd(3);
             }
-            while (pc > 12) {
+            for (;pc > 12;) {
                 pc -= rnd(3);
             }
         }
@@ -265,7 +265,7 @@ done_gases:
          * and 10.00. Again, the actual value will be multiplied by 100
          * to allow use of integer arithmetic. */
         mining_dif = 0;
-        while (mining_dif < 40 || mining_dif > 500) {
+        for (;mining_dif < 40 || mining_dif > 500;) {
             mining_dif = (rnd(3) + rnd(3) + rnd(3) - rnd(4)) * rnd(dia)
                          + rnd(30) + rnd(30);
         }

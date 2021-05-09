@@ -131,7 +131,7 @@ main(int argc, char *argv[]) {
                         turn_number - 1);
             }
 
-            while (fgets(log_line, 256, log_file) != NULL) {
+            for (;fgets(log_line, 256, log_file) != NULL;) {
                 fputs(log_line, report_file);
             }
 

@@ -118,7 +118,7 @@ main(int argc, char *argv[]) {
         }
 
         /* Copy message to log file. */
-        while (fgets(message_line, 131, message_file) != NULL) {
+        for (;fgets(message_line, 131, message_file) != NULL;) {
             fputs(message_line, log_file);
         }
 

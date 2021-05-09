@@ -250,7 +250,7 @@ get_gas:
         good_gas[H2O] = 1;
         ++num_neutral;
     }
-    while (num_neutral < 7) {
+    for (;num_neutral < 7;) {
         i = rnd(13);
         if (good_gas[i] == 0) {
             good_gas[i] = 1;
@@ -429,7 +429,7 @@ again:
     }
 
     i = 0;
-    while (1) {
+    for (;;) {
         if (temp[i] == '\n') {
             break;
         }

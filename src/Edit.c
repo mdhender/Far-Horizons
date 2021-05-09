@@ -1402,7 +1402,7 @@ again:
     }
 
     i = 0;
-    while (1) {
+    for (;;) {
         if (temp[i] == '\n') {
             break;
         }

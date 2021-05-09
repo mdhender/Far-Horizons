@@ -288,7 +288,7 @@ try_again:
         if (difference < 3) {
             difference = 3;
         }
-        while (temp_x < 0 || temp_x > max_xyz) {
+        for (;temp_x < 0 || temp_x > max_xyz;) {
             temp_x = x - rnd(difference) + rnd(difference);
         }
 
@@ -298,7 +298,7 @@ try_again:
         if (difference < 3) {
             difference = 3;
         }
-        while (temp_y < 0 || temp_y > max_xyz) {
+        for (;temp_y < 0 || temp_y > max_xyz;) {
             temp_y = y - rnd(difference) + rnd(difference);
         }
 
@@ -308,7 +308,7 @@ try_again:
         if (difference < 3) {
             difference = 3;
         }
-        while (temp_z < 0 || temp_z > max_xyz) {
+        for (;temp_z < 0 || temp_z > max_xyz;) {
             temp_z = z - rnd(difference) + rnd(difference);
         }
 

@@ -71,7 +71,7 @@ do_DEVELOP_command() {
     /* See if there are any more arguments. */
     tp        = input_line_pointer;
     more_args = FALSE;
-    while (c = *tp++) {
+    for (;c = *tp++;) {
         if (c == ';' || c == '\n') {
             break;
         }
@@ -237,7 +237,7 @@ do_DEVELOP_command() {
     /* See if there are more arguments. */
     tp        = input_line_pointer;
     more_args = FALSE;
-    while (c = *tp++) {
+    for (;c = *tp++;) {
         if (c == ';' || c == '\n') {
             break;
         }
