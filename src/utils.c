@@ -1,3 +1,7 @@
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #include "fh.h"
 
 /* This routine will return a random int between 1 and max, inclusive.

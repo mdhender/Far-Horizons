@@ -3,6 +3,10 @@
  * arguments, it will randomly select an X Y Z that is at least 10 parsecs from
  * all other home systems. */
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #include "fh.h"
 
 

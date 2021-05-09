@@ -1,5 +1,9 @@
 /* This is a modified non-interactive version of HomeSystem */
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #include "fh.h"
 
 

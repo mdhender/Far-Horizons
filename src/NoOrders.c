@@ -1,6 +1,10 @@
 /* This program will generate default orders for a species if no explicit
  *      orders have been provided. */
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #include "fh.h"
 
 
