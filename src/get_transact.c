@@ -9,7 +9,7 @@ int num_transactions;
 
 struct trans_data transaction[MAX_TRANSACTIONS];
 
-
+void
 get_transaction_data() {
     int  i, trans_fd;
     long num_bytes;

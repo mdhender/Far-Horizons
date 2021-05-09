@@ -16,6 +16,7 @@ extern struct ship_data *   ship_base, *ship;
 extern struct trans_data    transaction[MAX_TRANSACTIONS];
 
 
+void
 do_BUILD_command(int continuing_construction, int interspecies_construction) {
     int i, n, class, critical_tech, found, name_length,
         siege_effectiveness, cost_given, new_ship, max_tonnage,

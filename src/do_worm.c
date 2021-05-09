@@ -10,6 +10,7 @@ extern struct nampla_data *nampla;
 extern struct ship_data *  ship;
 
 
+void
 do_WORMHOLE_command() {
     int i, found, status;
 

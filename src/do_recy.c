@@ -12,6 +12,7 @@ extern struct nampla_data * nampla;
 extern struct ship_data *   ship, *ship_base;
 
 
+void
 do_RECYCLE_command() {
     int i, class, cargo;
 

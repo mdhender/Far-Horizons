@@ -58,6 +58,7 @@ check_bounced(long amount_needed) {
     return(FALSE);
 }
 
+void
 transfer_balance() {
     long limiting_amount;
 

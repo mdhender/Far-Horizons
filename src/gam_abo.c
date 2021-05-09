@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-
+void
 gamemaster_abort_option() {
     char answer[16];
 

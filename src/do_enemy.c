@@ -7,6 +7,7 @@ extern FILE *log_file;
 extern struct species_data *species;
 
 
+void
 do_ENEMY_command() {
     int i, array_index, bit_number;
 
