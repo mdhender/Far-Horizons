@@ -921,7 +921,7 @@ getdata(STARINFO **head, FILE *infile) {
     tailmoon = NULL;
     linenum  = 1;
 
-    for (; fgets(line, LINELEN, infile; ) != NULL) {
+    for (; fgets(line, LINELEN, infile) != NULL;) {
         switch (tolower(*line)) {
         case '/': break;
 
