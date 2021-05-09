@@ -111,7 +111,7 @@ do_UNLOAD_command() {
 
         if (reb > 0) {
             recovering_home_planet = TRUE;      /* HP was bombed. */
-        }else                                                                      {
+        }else {
             fprintf(log_file, "!!! Order ignored:\n");
             fprintf(log_file, "!!! %s", input_line);
             fprintf(log_file, "!!! Installation not allowed on a healthy home planet!\n");

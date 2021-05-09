@@ -23,7 +23,7 @@ check_bounced(long amount_needed) {
             species->econ_units -= take_from_EUs;
             EU_spending_limit   -= take_from_EUs;
             balance              = amount_needed;
-        }else  {
+        }else {
             return(TRUE);
         }
     }

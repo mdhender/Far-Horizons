@@ -148,7 +148,7 @@ convert:
             if (planet->gas_percent[2] > 50) {
                 planet->gas_percent[1] += j;
                 planet->gas_percent[2] -= j;
-            }else if (planet->gas_percent[1] > 50)  {
+            }else if (planet->gas_percent[1] > 50) {
                 planet->gas_percent[1] -= j;
                 planet->gas_percent[2] += j;
             }

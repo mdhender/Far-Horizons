@@ -111,7 +111,8 @@ generate_planets(struct planet_data *first_planet, int num_planets, int earth_li
         }
 
         /* Randomize the diameter. */
-        die_size = dia / 4; if (die_size < 2) {
+        die_size = dia / 4;
+        if (die_size < 2) {
             die_size = 2;
         }
         for (i = 1; i <= 4; i++) {
@@ -162,7 +163,8 @@ generate_planets(struct planet_data *first_planet, int num_planets, int earth_li
         g[planet_number] = grav;
 
         /* Randomize the temperature class obtained earlier. */
-        die_size = tc / 4; if (die_size < 2) {
+        die_size = tc / 4;
+        if (die_size < 2) {
             die_size = 2;
         }
         n_rolls = rnd(3) + rnd(3) + rnd(3);
@@ -263,7 +265,8 @@ generate_planets(struct planet_data *first_planet, int num_planets, int earth_li
         /* Pressure class depends primarily on gravity. Calculate
          * an approximate value and randomize it. */
         pc       = g[planet_number] / 10;
-        die_size = pc / 4; if (die_size < 2) {
+        die_size = pc / 4;
+        if (die_size < 2) {
             die_size = 2;
         }
         n_rolls = rnd(3) + rnd(3) + rnd(3);
@@ -354,7 +357,7 @@ get_gases:
                 gas[planet_number][num_gases_found] = i;
                 if (i == O2) {
                     temp = rnd(50);     /* Oxygen is self-limiting. */
-                }else                                                                         {
+                }else {
                     temp = rnd(100);
                 }
                 gas_percent[planet_number][num_gases_found] = temp;

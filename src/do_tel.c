@@ -357,7 +357,7 @@ do_TELESCOPE_command() {
                         fprintf(log_file, " <- %d GTs installed!",
                                 alien_ship->item_quantity[GT]);
                     }
-                }else  {
+                }else {
                     detection_chance = 0;
                 }
 

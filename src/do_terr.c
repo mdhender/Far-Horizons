@@ -93,8 +93,8 @@ do_TERRAFORM_command() {
     while (num_plants > 1) {
         got_required_gas   = FALSE;
         correct_percentage = FALSE;
-        for (j = 0; j < 4; j++) { /* Check gases on planet. */
-            for (i = 0; i < 6; i++) {   /* Compare with poisonous gases. */
+        for (j = 0; j < 4; j++) {     /* Check gases on planet. */
+            for (i = 0; i < 6; i++) { /* Compare with poisonous gases. */
                 if (colony_planet->gas[j] == species->required_gas) {
                     got_required_gas = j + 1;
 
@@ -249,7 +249,7 @@ fix_gases(struct planet_data *pl) {
 add_neutral_gas:
 
     /* If we reach this point, there is either no atmosphere or it contains
-     *  only the required gas.  In either case, add a random neutral gas. */
+    *  only the required gas.  In either case, add a random neutral gas. */
     for (i = 0; i < 4; i++) {
         if (pl->gas_percent[i] > 0) {
             continue;

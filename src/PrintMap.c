@@ -233,7 +233,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
         lim->ymax = lim->zmax;
         lim->zmin = tmin;
         lim->zmax = tmax;
-    }else if (flag->y)  {
+    }else if (flag->y) {
         tmin      = lim->ymin;
         tmax      = lim->ymax;
         lim->ymin = lim->xmin;
@@ -264,7 +264,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
         lim->plotxmax = lim->plotxmin + lim->mapwidth;
         lim->plotymax = lim->plotymin + lim->mapwidth;
         lim->plotzmax = lim->plotzmin + lim->mapwidth;
-    }else  {
+    }else {
         lim->plotxmin = *gridsize * (floor(lim->xmin / *gridsize));
         lim->plotxmax = *gridsize * (ceil(lim->xmax / *gridsize));
         lim->plotymin = *gridsize * (floor(lim->ymin / *gridsize));
@@ -281,7 +281,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
                 }
                 lim->plotymin -= (extrax / 2);
                 lim->plotymax += (extrax / 2);
-            }else  {
+            }else {
                 if ((extrax / *gridsize) % 2) {
                     extrax        += *gridsize;
                     lim->plotxmax += *gridsize;
@@ -290,7 +290,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
                 lim->plotxmax -= (extrax / 2);
             }
             lim->mapwidth = (lim->plotxmax - lim->plotxmin);
-        }else  {
+        }else {
             xsize = lim->plotxmax - lim->plotxmin;
             ysize = lim->plotymax - lim->plotymin;
             zsize = lim->plotzmax - lim->plotzmin;
@@ -308,7 +308,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
                 lim->plotzmin -= (xsize - zsize) / 2;
                 lim->plotzmax += (xsize - zsize) / 2;
                 lim->mapwidth  = xsize;
-            }else if (ysize == MAX(xsize, MAX(ysize, zsize)))  {
+            }else if (ysize == MAX(xsize, MAX(ysize, zsize))) {
                 if ((ysize - xsize) % 2) {
                     xsize         += *gridsize;
                     lim->plotxmax += *gridsize;
@@ -322,7 +322,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
                 lim->plotzmin -= (ysize - zsize) / 2;
                 lim->plotzmax += (ysize - zsize) / 2;
                 lim->mapwidth  = ysize;
-            }else  {
+            }else {
                 if ((zsize - xsize) % 2) {
                     xsize         += *gridsize;
                     lim->plotxmax += *gridsize;
@@ -398,7 +398,7 @@ drawgrid3D(FILE *outfile, LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
     if (!flag->g) {
         OUT("gsave [1 2] 0 setdash 0.001 setlinewidth");
         fprintf(outfile, "%f %f rlineto stroke grestore\n", TPSB, TPSB);
-    }else  {
+    }else {
         OUT("gsave 0.001 setlinewidth 3 3 rlineto stroke");
         fprintf(outfile, "x %f add %f moveto -3 -3 rlineto stroke grestore\n",
                 TPSB, (psplaneheight + TPSB));
@@ -413,7 +413,7 @@ drawgrid3D(FILE *outfile, LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
     if (!flag->g) {
         OUT("gsave [1 2] 0 setdash 0.001 setlinewidth");
         fprintf(outfile, "%f 0 rlineto stroke grestore\n", TPSA);
-    }else  {
+    }else {
         OUT("gsave 0.001 setlinewidth 5 0 rlineto stroke");
         fprintf(outfile, "-130 %f sub y add y moveto\n", psplaneheight + TPSA);
         OUT("-5 0 rlineto stroke grestore");
@@ -455,7 +455,7 @@ drawgrid(FILE *outfile, LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
     if (!flag->g) {
         OUT("x -250 moveto gsave [1 2] 0 setdash 0.001 setlinewidth");
         OUT("0 500 rlineto stroke grestore");
-    }else  {
+    }else {
         OUT("x -250 moveto gsave 0.001 setlinewidth 0 5 rlineto stroke");
         OUT("x 250 moveto 0 -5 rlineto stroke grestore");
     }
@@ -465,7 +465,7 @@ drawgrid(FILE *outfile, LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
     if (!flag->g) {
         OUT("-130 y moveto gsave [1 2] 0 setdash 0.001 setlinewidth");
         OUT("500 0 rlineto stroke grestore");
-    }else  {
+    }else {
         OUT("-130 y moveto gsave 0.001 setlinewidth 5 0 rlineto stroke");
         OUT("370 y moveto -5 0 rlineto stroke grestore");
     }
@@ -484,11 +484,11 @@ getcoords(STARINFO *current, FLAGINFO *flag, float *psx, float *psy, float *psz,
         *psx = current->y;
         *psy = current->z;
         *psz = current->x;
-    }else if (flag->y)  {
+    }else if (flag->y) {
         *psx = current->z;
         *psy = current->x;
         *psz = current->y;
-    }else  {
+    }else {
         *psx = current->x;
         *psy = current->y;
         *psz = current->z;
@@ -937,7 +937,7 @@ getdata(STARINFO **head, FILE *infile) {
                        plan->name) != 7) {
                 printf("Illegal data format in line %d\n", linenum);
                 free(plan);
-            }else  {
+            }else {
                 plan->next = NULL;
                 plan->moon = NULL;
                 if (tailstar->planet) {
@@ -966,7 +966,7 @@ getdata(STARINFO **head, FILE *infile) {
                        plan->name) != 7) {
                 printf("Illegal data format in line %d\n", linenum);
                 free(plan);
-            }else  {
+            }else {
                 plan->next = NULL;
                 if (tailplan->moon) {
                     tailmoon->next = plan;
@@ -983,7 +983,7 @@ getdata(STARINFO **head, FILE *infile) {
                        &temp->x, &temp->y, &temp->z, temp->name, temp->type) != 5) {
                 printf("Illegal data format in line %d\n", linenum);
                 free(temp);
-            }else  {
+            }else {
                 temp->next   = NULL;
                 temp->planet = NULL;
                 if (*head) {

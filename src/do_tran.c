@@ -77,7 +77,7 @@ do_TRANSFER_command() {
     }
 
     /* Test if the order has both a source and a destination.  Sometimes,
-     *  the player will accidentally omit the source if it's "obvious". */
+    *  the player will accidentally omit the source if it's "obvious". */
     temp_ptr          = input_line_pointer;
     both_args_present = FALSE;
     while (1) {
@@ -384,7 +384,7 @@ do_capacity:
         }
 
         attempt_during_siege = TRUE;
-    }else  {
+    }else {
         attempt_during_siege = FALSE;
     }
 
@@ -424,7 +424,7 @@ do_capacity:
         if (item_class == CU) {
             if (nampla1 == nampla_base) {
                 ship2->loading_point = 9999;            /* Home planet. */
-            }else                                                                             {
+            }else {
                 ship2->loading_point = (nampla1 - nampla_base);
             }
         }

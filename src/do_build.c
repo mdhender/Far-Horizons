@@ -373,7 +373,7 @@ do_cost:
             if (class == CU && num_items > 0) {
                 if (nampla == nampla_base) {
                     ship->loading_point = 9999; /* Home planet. */
-                }else                                                                     {
+                }else {
                     ship->loading_point = (nampla - nampla_base);
                 }
             }
@@ -618,7 +618,7 @@ check_ship:
         if (class == BA) {
             ship->type   = STARBASE;
             ship->status = IN_ORBIT;
-        }else if (sub_light)  {
+        }else if (sub_light) {
             ship->type = SUB_LIGHT;
         }else{
             ship->type = FTL;

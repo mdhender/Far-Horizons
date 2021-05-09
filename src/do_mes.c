@@ -25,7 +25,7 @@ do_MESSAGE_command() {
         fprintf(log_file, "!!! %s", input_line);
         fprintf(log_file, "!!! Invalid species name in MESSAGE command.\n");
         bad_species = TRUE;
-    }else  {
+    }else {
         bad_species = FALSE;
     }
 

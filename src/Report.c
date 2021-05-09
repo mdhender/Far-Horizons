@@ -1030,7 +1030,7 @@ jump_end:
                         "    ;  if no other production orders are given for it. This mining colony\n");
                 fprintf(report_file,
                         "    ;  will generate %ld economic units this turn.\n", nampla->use_on_ambush);
-            }else if (nampla->status & RESORT_COLONY)  {
+            }else if (nampla->status & RESORT_COLONY) {
                 fprintf(report_file,
                         "    ; The above PRODUCTION order is required for this resort colony, even\n");
                 fprintf(report_file,
@@ -1054,7 +1054,7 @@ jump_end:
                     }else{
                         fprintf(report_file, " (max = no limit)");
                     }
-                }else  {
+                }else {
                     fprintf(report_file, " (max = %ld)", 2 * n);
                 }
 
@@ -1833,7 +1833,7 @@ closest_unvisited_star(struct ship_data *ship) {
         fprintf(report_file, "%d %d %d", x, y, z);
         closest_star->visited_by[species_array_index] |= species_bit_mask;
         /* So that we don't send more than one ship to the same place. */
-    }else  {
+    }else {
         fprintf(report_file, "???");
     }
 }

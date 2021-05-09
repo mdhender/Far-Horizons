@@ -50,7 +50,7 @@ do_MANUFACTURING_command() {
         if (increment == 0) {
             return;
         }
-    }else  {
+    }else {
         increment = value;
     }
 

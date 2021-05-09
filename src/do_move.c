@@ -72,17 +72,20 @@ do_MOVE_command() {
     }
 
     /* Check if deltas are acceptable. */
-    i = x - ship->x; if (i < 0) {
+    i = x - ship->x;
+    if (i < 0) {
         n = -i;
     } else{
         n = i;
     }
-    i = y - ship->y; if (i < 0) {
+    i = y - ship->y;
+    if (i < 0) {
         n += -i;
     } else{
         n += i;
     }
-    i = z - ship->z; if (i < 0) {
+    i = z - ship->z;
+    if (i < 0) {
         n += -i;
     } else{
         n += i;

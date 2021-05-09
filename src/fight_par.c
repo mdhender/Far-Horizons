@@ -378,7 +378,7 @@ next_step:
                 /* Transports are not designed for combat. */
                 offensive_power /= 10;
                 defensive_power /= 10;
-            }else if (sh->class != BA)  {
+            }else if (sh->class != BA) {
                 /* Add auxiliary shield generator contribution, if any. */
                 tons = 5;
                 for (i = SG1; i <= SG9; i++) {

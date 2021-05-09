@@ -41,7 +41,7 @@ main(int argc, char *argv[]) {
         }else{
             usage_error = TRUE;
         }
-    }else  {
+    }else {
         list_planets = TRUE;
     }
 

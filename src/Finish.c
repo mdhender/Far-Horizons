@@ -180,7 +180,7 @@ main(int argc, char *argv[]) {
                 if (transaction[i].value < 3) {
                     /* Intercepted or self-destructed. */
                     log_string(" disappeared without a trace, cause unknown!\n");
-                }else if (transaction[i].value == 3)  {
+                }else if (transaction[i].value == 3) {
                     /* Mis-jumped. */
                     log_string(" mis-jumped to ");
                     log_int(transaction[i].x);  log_char(' ');
@@ -269,7 +269,7 @@ main(int argc, char *argv[]) {
                         }
                     }
                     salvage_value = original_cost / 4;
-                }else  {
+                }else {
                     salvage_value = 0;
                 }
 
@@ -321,7 +321,7 @@ main(int argc, char *argv[]) {
                     log_string(". The siege was ");
                     log_long(transaction[i].number1);
                     log_string("% effective");
-                }else if (transaction[i].type == LOOTING_EU_TRANSFER)  {
+                }else if (transaction[i].type == LOOTING_EU_TRANSFER) {
                     log_string(" as a result of your looting their PL ");
                     log_string(transaction[i].name3);
                 }
@@ -642,13 +642,13 @@ check_random:
                     if (species->hp_original_base != 0) {  /* HP was bombed. */
                         if (eb >= species->hp_original_base) {
                             species->hp_original_base = 0; /* Fully recovered. */
-                        }else                                                                                    {
+                        }else {
                             nampla->pop_units = (eb * HP_AVAILABLE_POP)
                                                 / species->hp_original_base;
                         }
                     }
                 }
-            }else if (nampla->status & POPULATED)  {
+            }else if (nampla->status & POPULATED) {
                 /* Get life support tech level needed. */
                 ls_needed = life_support_needed(species, home_planet, planet);
 
@@ -690,7 +690,7 @@ check_random:
                     if (nampla->mi_base > 0 && nampla->ma_base == 0) {
                         nampla->status |= MINING_COLONY;
                         change          = 0;
-                    }else if (nampla->status & MINING_COLONY)  {
+                    }else if (nampla->status & MINING_COLONY) {
                         /* A former mining colony has been converted to a
                          *      normal colony. */
                         nampla->status &= ~MINING_COLONY;
@@ -702,7 +702,7 @@ check_random:
                         planet->gravity <= home_planet->gravity) {
                         nampla->status |= RESORT_COLONY;
                         change          = 0;
-                    }else if (nampla->status & RESORT_COLONY)  {
+                    }else if (nampla->status & RESORT_COLONY) {
                         /* A former resort colony has been converted to a
                          *      normal colony. */
                         nampla->status &= ~RESORT_COLONY;
@@ -727,7 +727,7 @@ check_random:
                     if (nampla->pop_units > 0) {
                         --nampla->pop_units;
                         goto do_auto_increases;
-                    }else if (nampla->item_quantity[CU] > 0)  {
+                    }else if (nampla->item_quantity[CU] > 0) {
                         --nampla->item_quantity[CU];
                         if (!header_printed) {
                             print_header();
@@ -735,7 +735,7 @@ check_random:
                         log_string("  Number of colonist units on PL ");
                         log_string(nampla->name);
                         log_string(" was reduced by one unit due to normal attrition.");
-                    }else if (nampla->item_quantity[PD] > 0)  {
+                    }else if (nampla->item_quantity[PD] > 0) {
                         --nampla->item_quantity[PD];
                         if (!header_printed) {
                             print_header();
@@ -743,7 +743,7 @@ check_random:
                         log_string("  Number of planetary defense units on PL ");
                         log_string(nampla->name);
                         log_string(" was reduced by one unit due to normal attrition.");
-                    }else if (nampla->ma_base > 0)  {
+                    }else if (nampla->ma_base > 0) {
                         --nampla->ma_base;
                         if (!header_printed) {
                             print_header();
@@ -915,13 +915,13 @@ check_pop:
                     log_string("landing of ");
                     log_string(transaction[i].name2);
                     log_string(" on the planet.\n");
-                }else if (transaction[i].value == 2)  {
+                }else if (transaction[i].value == 2) {
                     /* Enemy ship or starbase construction. */
                     log_string("construction of ");
                     log_string(transaction[i].name2);
                     log_string(", but you destroyed it before it");
                     log_string(" could be completed.\n");
-                }else if (transaction[i].value == 3)  {
+                }else if (transaction[i].value == 3) {
                     /* Enemy PD construction. */
                     log_string("construction of planetary defenses, but you");
                     log_string(" destroyed them before they could be completed.\n");

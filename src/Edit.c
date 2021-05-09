@@ -53,20 +53,20 @@ again:
         edit_star();
         stars_modified = TRUE;
         goto again;
-    }else if (option == 2)  {
+    }else if (option == 2) {
         edit_planet();
         planets_modified = TRUE;
         goto again;
-    }else if (option == 3)  {
+    }else if (option == 3) {
         edit_species();
         species_modified = TRUE;
         goto again;
-    }else if (option == 4)  {
+    }else if (option == 4) {
         create_star();
         stars_modified   = TRUE;
         planets_modified = TRUE;
         goto again;
-    }else if (option == 8)  {
+    }else if (option == 8) {
         /* Save data. */
         if (stars_modified) {
             save_star_data();
@@ -83,7 +83,7 @@ again:
         stars_modified   = FALSE;
         planets_modified = FALSE;
         species_modified = FALSE;
-    }else if (option == 9)  {
+    }else if (option == 9) {
         if (stars_modified || planets_modified || species_modified) {
             printf("\007\n\n\tWARNING! Data may have been modified!\n");
             printf("\n\tDo you really want to exit (y or Y = yes): ");
@@ -416,13 +416,13 @@ again:
     if (option == 1) {
         edit_species_stats();
         goto again;
-    }else if (option == 2)  {
+    }else if (option == 2) {
         edit_nampla();
         goto again;
-    }else if (option == 3)  {
+    }else if (option == 3) {
         edit_ship();
         goto again;
-    }else if (option != 9)  {
+    }else if (option != 9) {
         goto again;
     }else{
         return;
@@ -572,7 +572,7 @@ next_contact_mask:
             if (n < 0) {
                 delete = TRUE;
                 n      = -n;
-            }else  {
+            }else {
                 delete = FALSE;
             }
 
@@ -627,7 +627,7 @@ next_ally_mask:
             if (n < 0) {
                 delete = TRUE;
                 n      = -n;
-            }else  {
+            }else {
                 delete = FALSE;
             }
 
@@ -682,7 +682,7 @@ next_enemy_mask:
             if (n < 0) {
                 delete = TRUE;
                 n      = -n;
-            }else  {
+            }else {
                 delete = FALSE;
             }
 
@@ -766,7 +766,7 @@ again:
     i = get_value();
     if (i == 1) {
         x = value; index_changed = TRUE;
-    }else if (i == -1)                                                 {
+    }else if (i == -1) {
         return;
     }
 
@@ -775,7 +775,7 @@ again:
     i = get_value();
     if (i == 1) {
         y = value; index_changed = TRUE;
-    }else if (i == -1)                                                 {
+    }else if (i == -1) {
         return;
     }
 
@@ -784,7 +784,7 @@ again:
     i = get_value();
     if (i == 1) {
         z = value; index_changed = TRUE;
-    }else if (i == -1)                                                 {
+    }else if (i == -1) {
         return;
     }
 
@@ -793,7 +793,7 @@ again:
     i = get_value();
     if (i == 1) {
         pn = value; index_changed = TRUE;
-    }else if (i == -1)                                                  {
+    }else if (i == -1) {
         return;
     }
 
@@ -1351,7 +1351,7 @@ int get_location(int need_planet) {
             return;
         }
         pn = value;
-    }else  {
+    }else {
         pn = 0;
     }
 

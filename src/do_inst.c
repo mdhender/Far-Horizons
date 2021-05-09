@@ -109,7 +109,7 @@ get_planet:
 
         if (reb > 0) {
             recovering_home_planet = TRUE;      /* HP was bombed. */
-        }else                                                                      {
+        }else {
             fprintf(log_file, "!!! Order ignored:\n");
             fprintf(log_file, "!!! %s", input_line);
             fprintf(log_file, "!!! Installation not allowed on a healthy home planet!\n");
@@ -133,11 +133,11 @@ check_items:
                 item_class   = AU;
                 do_all_units = FALSE;
                 goto check_items;
-            }else  {
+            }else {
                 return;
             }
         }
-    }else if (nampla->item_quantity[item_class] < item_count)  {
+    }else if (nampla->item_quantity[item_class] < item_count) {
         fprintf(log_file, "! WARNING: %s", input_line);
         fprintf(log_file,
                 "! Planet does not have %d %ss. Substituting 0 for %d!\n",

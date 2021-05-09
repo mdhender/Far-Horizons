@@ -136,7 +136,7 @@ got_nampla:
     if (nampla->status & MINING_COLONY) {
         mining_colony  = TRUE;
         special_colony = TRUE;
-    }else if (nampla->status & RESORT_COLONY)  {
+    }else if (nampla->status & RESORT_COLONY) {
         resort_colony  = TRUE;
         special_colony = TRUE;
     }
@@ -227,10 +227,10 @@ got_nampla:
         if (nampla->status & HOME_PLANET) {
             if (species->hp_original_base != 0) { /* HP was bombed. */
                 EU_spending_limit = 4 * balance;  /* Factor = 4 + 1 = 5. */
-            }else                                                                              {
+            }else {
                 EU_spending_limit = species->econ_units;
             }
-        }else  {
+        }else {
             EU_spending_limit = balance;
         }
     }
@@ -251,7 +251,7 @@ got_nampla:
         special_production  = (2 * RMs_produced) / 3;
         special_production -= ((n * special_production) + 5000) / 10000;
         log_string("    Mining colony ");
-    }else if (resort_colony)  {
+    }else if (resort_colony) {
         special_production  = (2 * production_capacity) / 3;
         special_production -= ((n * special_production) + 5000) / 10000;
         log_string("    Resort colony ");
@@ -408,7 +408,7 @@ got_nampla:
                     enemy_on_same_planet         = TRUE;
                     pop_units_here[alien_number] = alien_pop_units;
                     total_alien_pop_here        += alien_pop_units;
-                }else if (n > 0)  {
+                }else if (n > 0) {
                     enemy_on_same_planet = TRUE;
                 }
 
@@ -448,7 +448,7 @@ got_nampla:
         /* Determine the effectiveness of this ship on the siege. */
         if (alien_ship->type == STARBASE) {
             i = alien_ship->tonnage;    /* One quarter of normal ships. */
-        }else                                                                             {
+        }else {
             i = 4 * (int)alien_ship->tonnage;
         }
 
@@ -473,7 +473,7 @@ got_nampla:
     if (nampla->mi_base + nampla->ma_base == 0) {
         siege_percent_effectiveness = -9999;    /* New colony with nothing
                                                  *  installed yet. */
-    }else                                                                        {
+    }else {
         siege_percent_effectiveness = total_effective_tonnage
                                       / ((((long)species->tech_level[MI] * (long)nampla->mi_base)
                                           + ((long)species->tech_level[MA] * (long)nampla->ma_base))
@@ -485,7 +485,7 @@ got_nampla:
     }else if (siege_percent_effectiveness == -9999) {
         log_string("      However, although planet is populated, it has no economic base.\n\n");
         return;
-    }else if (siege_percent_effectiveness < 1)  {
+    }else if (siege_percent_effectiveness < 1) {
         log_string("      However, because of the weakness of the siege, it was completely ineffective!\n\n");
         return;
     }

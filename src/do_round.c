@@ -340,7 +340,7 @@ fire:
         if (act->surprised[defender_index]) {
             chance_to_hit *= 2;
             shields_up     = FALSE;
-        }else  {
+        }else {
             shields_up = TRUE;
         }
 
@@ -431,7 +431,7 @@ fire:
                 } else{
                     defending_ship->dest_y = 0;
                 }
-            }else  { /* Planetary defenses. */
+            }else {  /* Planetary defenses. */
                 act->shield_strength_left[defender_index] -= damage_done;
             }
         }
@@ -451,7 +451,7 @@ fire:
                         damage_done -=
                             act->shield_strength_left[defender_index];
                     }
-                }else  {
+                }else {
                     damage_done = -act->shield_strength_left[defender_index];
                 }
             }
@@ -543,7 +543,7 @@ fire:
                                 }
                                 recycle_value = (j * item_cost[i])
                                                 / techLevel_2x;
-                            }else if (i == RM)                              {
+                            }else if (i == RM) {
                                 recycle_value = j / 5;
                             }else{
                                 recycle_value = (j * item_cost[i]) / 2;
@@ -557,7 +557,7 @@ fire:
 
                     log_long(economic_units);
                     log_string(" economic units for the hijackers.\n");
-                }else  {
+                }else {
                     log_string(" was destroyed.\n");
                 }
 

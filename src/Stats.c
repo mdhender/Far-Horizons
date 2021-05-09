@@ -238,7 +238,7 @@ main(int argc, char *argv[]) {
                 total_defensive_power += power(ship->tonnage);
                 all_starbase_tons     += (long)ship->tonnage;
                 ++n_starbases;  ++nba;
-            }else if (ship->class == TR)  {
+            }else if (ship->class == TR) {
                 all_transport_tons += (long)ship->tonnage;
                 ++n_transports;  ++ntr;
             }else {

@@ -179,7 +179,7 @@ do_battle(struct battle_data *bat) {
             if (enemy < 0) {
                 enemy      = -enemy;
                 TRUE_value = 2;         /* This is a hijacking. */
-            }else  {
+            }else {
                 TRUE_value = 1;         /* This is a normal attack. */
             }
 
@@ -456,11 +456,11 @@ consolidate:
             }else{
                 max_rounds = 1;
             }
-        }else if (option == PLANET_BOMBARDMENT)  {
+        }else if (option == PLANET_BOMBARDMENT) {
             /* To determine the effectiveness of the bombardment, we will
              *  simulate ten rounds of combat and add up the damage. */
             max_rounds = 10;
-        }else if (option == GERM_WARFARE || option == SIEGE)  {
+        }else if (option == GERM_WARFARE || option == SIEGE) {
             /* We just need to see who is attacking whom and get the number
              *  of germ warfare bombs being used. */
             max_rounds = 1;
@@ -479,15 +479,15 @@ consolidate:
             log_string(" within range of planet #");
             log_int(where);
             log_string("...\n");
-        }else if (option == PLANET_BOMBARDMENT)  {
+        }else if (option == PLANET_BOMBARDMENT) {
             log_string("\n    Bombardment of planet #");
             log_int(where);
             log_string(" begins...\n");
-        }else if (option == GERM_WARFARE)  {
+        }else if (option == GERM_WARFARE) {
             log_string("\n    Germ warfare commences against planet #");
             log_int(where);
             log_string("...\n");
-        }else if (option == SIEGE)  {
+        }else if (option == SIEGE) {
             log_string("\n    Siege of planet #");
             log_int(where);
             log_string(" is now in effect...\n\n");
@@ -559,7 +559,7 @@ do_combat:
         round_number = 1;
 
         log_summary = FALSE;    /* do_round() and the routines that it calls
-                                 *      will set this for important stuff. */
+                                *      will set this for important stuff. */
 
         if (option == PLANET_BOMBARDMENT || option == GERM_WARFARE ||
             option == SIEGE) {
@@ -626,7 +626,7 @@ do_combat:
                     }
                 }
             }
-        }else if (option == SIEGE)  {
+        }else if (option == SIEGE) {
             do_siege(bat, &act);
         }
 

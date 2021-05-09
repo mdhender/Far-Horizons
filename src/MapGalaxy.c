@@ -138,7 +138,7 @@ main(int argc, char *argv[]) {
                             }else{
                                 fprintf(outfile, "%4d |", z);
                             }
-                        }else  {
+                        }else {
                             fprintf(outfile, "     |");
                         }
                         break;

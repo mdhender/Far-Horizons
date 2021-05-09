@@ -82,7 +82,7 @@ main(int argc, char *argv[]) {
             sp_num[i] = i + 1;
         }
         do_all_species = TRUE;
-    }else  {
+    }else {
         do_all_species = FALSE;
     }
 

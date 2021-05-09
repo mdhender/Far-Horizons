@@ -62,7 +62,7 @@ withdrawal_check(struct battle_data *bat, struct action_data *act) {
                 continue;
             }
             /* Transports will withdraw only when entire fleet withdraws. */
-        }else  {
+        }else {
             withdraw_age = bat->warship_withdraw_age[species_index];
         }
 
@@ -113,7 +113,7 @@ withdrawal_check(struct battle_data *bat, struct action_data *act) {
         }
         if (bat->fleet_withdraw_percentage[species_index] == 0) {
             percent_loss = 101;         /* Always withdraw immediately. */
-        }else                                                                             {
+        }else {
             percent_loss = (100 * num_ships_gone[species_index])
                            / num_ships_total[species_index];
         }

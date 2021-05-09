@@ -31,7 +31,7 @@ do_TECH_command() {
     if (get_class_abbr() != TECH_ID) {
         need_technology = TRUE;         /* Sometimes players accidentally
                                          * reverse the arguments. */
-    }else                                                                   {
+    }else {
         need_technology = FALSE;
         tech            = abbr_index;
     }

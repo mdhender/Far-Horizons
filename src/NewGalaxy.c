@@ -251,7 +251,8 @@ again3:
 
                 /* Size of die. Big stars (blue, blue-white) roll bigger
                  * dice. Smaller stars (orange, red) roll smaller dice. */
-                n = star_type; if (n > 2) {
+                n = star_type;
+                if (n > 2) {
                     n -= 1;
                 }
 

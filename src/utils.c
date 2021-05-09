@@ -332,7 +332,7 @@ ship_name(struct ship_data *ship) {
         }else{
             sprintf(full_ship_id, "%s ???\0", ship_abbr[ship->class]);
         }
-    }else if (ship->class == TR)  {
+    }else if (ship->class == TR) {
         sprintf(full_ship_id, "%s%d%s %s\0",
                 ship_abbr[ship->class], ship->tonnage, ship_type[ship->type],
                 ship->name);
@@ -497,7 +497,7 @@ log_char(char c) {
 
     if (log_start_of_line && c == ' ') {  /* Determine number of indenting */
         ++log_indentation;                /*  spaces for current line. */
-    }else                                                                            {
+    }else {
         log_start_of_line = FALSE;
     }
 }
@@ -840,11 +840,11 @@ agrep_score(char *correct_string, char *unknown_string) {
             score += 2;
             ++p1;
             ++p2;
-        }else if (c1 == *p2)  {
+        }else if (c1 == *p2) {
             /* Unneeded character. */
             ++score;
             ++p2;
-        }else if (c2 == *p1)  {
+        }else if (c2 == *p1) {
             /* Missing character. */
             ++score;
             ++p1;

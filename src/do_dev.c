@@ -188,8 +188,8 @@ do_DEVELOP_command() {
     }
 
     /* Determine if its a mining or resort colony, and if it can afford to
-     *  build its own IUs and AUs. Note that we cannot use nampla->status
-     *  because it is not correctly set until the Finish program is run. */
+    *  build its own IUs and AUs. Note that we cannot use nampla->status
+    *  because it is not correctly set until the Finish program is run. */
 
     home_planet   = planet_base + (long)nampla_base->planet_index;
     colony_planet = planet_base + (long)colony_nampla->planet_index;
@@ -325,7 +325,7 @@ do_DEVELOP_command() {
 
         num_AUs = 0;
         num_IUs = num_CUs;
-    }else if (resort_colony)  {
+    }else if (resort_colony) {
         if (load_transport) {
             num_CUs = capacity / 2;
             if (num_CUs > nampla->pop_units) {
@@ -391,7 +391,7 @@ do_DEVELOP_command() {
     /* Start logging what happened. */
     if (load_transport && CUs_only) {
         start_dev_log(num_CUs, 0, 0);
-    }else  {
+    }else {
         start_dev_log(num_CUs, num_IUs, num_AUs);
     }
 

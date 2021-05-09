@@ -79,7 +79,7 @@ next_item:
         }
 
         printf(".\n");
-    }else if (strcmp(input_abbr, "EU") == 0)  {
+    }else if (strcmp(input_abbr, "EU") == 0) {
         printf("SP %s has %ld economic units", species->name,
                species->econ_units);
 
@@ -95,7 +95,7 @@ next_item:
         }
 
         printf(".\n");
-    }else if (strcmp(input_abbr, "HP") == 0)  {
+    }else if (strcmp(input_abbr, "HP") == 0) {
         printf("SP %s hp_original_base = %ld", species->name,
                species->hp_original_base);
 
@@ -189,28 +189,28 @@ again:
             ++next_arg;
 
             break;
-        }else if (strcasecmp(argument[next_arg], "y") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "y") == 0) {
             printf("SP %s, PL %s, y = %d", species->name, nampla->name,
                    nampla->y);
 
             ++next_arg;
 
             break;
-        }else if (strcasecmp(argument[next_arg], "z") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "z") == 0) {
             printf("SP %s, PL %s, z = %d", species->name, nampla->name,
                    nampla->z);
 
             ++next_arg;
 
             break;
-        }else if (strcasecmp(argument[next_arg], "pn") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "pn") == 0) {
             printf("SP %s, PL %s, pn = %d", species->name, nampla->name,
                    nampla->pn);
 
             ++next_arg;
 
             break;
-        }else if (strcasecmp(argument[next_arg], "sy") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "sy") == 0) {
             printf("SP %s, PL %s, %d shipyards", species->name, nampla->name,
                    nampla->shipyards);
 
@@ -226,7 +226,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "ib") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "ib") == 0) {
             printf("SP %s, PL %s, mining base = %d", species->name, nampla->name,
                    nampla->mi_base);
 
@@ -242,7 +242,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "ab") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "ab") == 0) {
             printf("SP %s, PL %s, manufacturing base = %d", species->name, nampla->name,
                    nampla->ma_base);
 
@@ -258,7 +258,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "ap") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "ap") == 0) {
             printf("SP %s, PL %s, available population = %d", species->name, nampla->name,
                    nampla->pop_units);
 
@@ -274,7 +274,7 @@ again:
             }
 
             break;
-        }else  {
+        }else {
             return;
         }
     }
@@ -354,7 +354,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "y") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "y") == 0) {
             printf("SP %s, %s, y = %d", species->name, ship_name(ship),
                    ship->y);
 
@@ -370,7 +370,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "z") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "z") == 0) {
             printf("SP %s, %s, z = %d", species->name, ship_name(ship),
                    ship->z);
 
@@ -386,7 +386,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "pn") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "pn") == 0) {
             printf("SP %s, %s, pn = %d", species->name, ship_name(ship),
                    ship->pn);
 
@@ -402,7 +402,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "lp") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "lp") == 0) {
             printf("SP %s, %s, loading_point = %d", species->name,
                    ship_name(ship), ship->loading_point);
 
@@ -418,7 +418,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "up") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "up") == 0) {
             printf("SP %s, %s, unloading_point = %d", species->name,
                    ship_name(ship), ship->unloading_point);
 
@@ -434,7 +434,7 @@ again:
             }
 
             break;
-        }else if (strcasecmp(argument[next_arg], "ag") == 0)  {
+        }else if (strcasecmp(argument[next_arg], "ag") == 0) {
             printf("SP %s, %s, age = %d turns", species->name, ship_name(ship),
                    ship->age);
 
@@ -450,7 +450,7 @@ again:
             }
 
             break;
-        }else  {
+        }else {
             return;
         }
     }
@@ -599,7 +599,7 @@ next_item:
                 data_was_modified = TRUE;
             }
         }
-    }else if (strcasecmp(argument[next_arg], "ee") == 0)  {
+    }else if (strcasecmp(argument[next_arg], "ee") == 0) {
         printf("For planet #%d at %d %d %d, economic efficiency = %d",
                pn, x, y, z, planet->econ_efficiency);
 
@@ -613,7 +613,7 @@ next_item:
                 data_was_modified = TRUE;
             }
         }
-    }else if (strcasecmp(argument[next_arg], "pc") == 0)  {
+    }else if (strcasecmp(argument[next_arg], "pc") == 0) {
         printf("For planet #%d at %d %d %d, pressure class = %d",
                pn, x, y, z, planet->pressure_class);
 
@@ -627,7 +627,7 @@ next_item:
                 data_was_modified = TRUE;
             }
         }
-    }else if (strcasecmp(argument[next_arg], "tc") == 0)  {
+    }else if (strcasecmp(argument[next_arg], "tc") == 0) {
         printf("For planet #%d at %d %d %d, temperature class = %d",
                pn, x, y, z, planet->temperature_class);
 
@@ -641,7 +641,7 @@ next_item:
                 data_was_modified = TRUE;
             }
         }
-    }else if (strcasecmp(argument[next_arg], "gv") == 0)  {
+    }else if (strcasecmp(argument[next_arg], "gv") == 0) {
         printf("For planet #%d at %d %d %d, gravity = %d",
                pn, x, y, z, planet->gravity);
 
@@ -864,7 +864,7 @@ get_class_abbr(char *arg) {
             if (toupper(*arg) == 'S') {
                 sub_light = TRUE;
                 ++arg;
-            }else  {
+            }else {
                 sub_light = FALSE;
             }
 
@@ -932,7 +932,7 @@ ship_name(struct ship_data *ship) {
         }else{
             sprintf(full_ship_id, "%s ???\0", ship_abbr[ship->class]);
         }
-    }else if (ship->class == TR)  {
+    }else if (ship->class == TR) {
         sprintf(full_ship_id, "%s%d%s %s\0",
                 ship_abbr[ship->class], ship->tonnage, ship_type[ship->type],
                 ship->name);

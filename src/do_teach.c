@@ -40,7 +40,7 @@ do_TEACH_command() {
         if (max_tech_level > species->tech_level[tech]) {
             max_tech_level = species->tech_level[tech];
         }
-    }else  {
+    }else {
         max_tech_level = species->tech_level[tech];
     }
 

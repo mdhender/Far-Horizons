@@ -53,10 +53,10 @@ do_HIDE_command() {
             fprintf(log_file, "!!! %s", input_line);
             fprintf(log_file, "!!! Mining colony does not have sufficient EUs to hide.\n");
             return;
-        }else  {
+        }else {
             species->econ_units -= cost;
         }
-    }else if (check_bounced(cost))  {
+    }else if (check_bounced(cost)) {
         fprintf(log_file, "!!! Order ignored:\n");
         fprintf(log_file, "!!! %s", input_line);
         fprintf(log_file, "!!! Insufficient funds to execute order.\n");

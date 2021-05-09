@@ -389,7 +389,7 @@ unload_ship:
                         "    ; The above PRODUCTION order is required for this mining colony, even\n");
                 fprintf(orders_file,
                         "    ;  if no other production orders are given for it.\n");
-            }else if (nampla->status & RESORT_COLONY)  {
+            }else if (nampla->status & RESORT_COLONY) {
                 fprintf(orders_file,
                         "    ; The above PRODUCTION order is required for this resort colony, even\n");
                 fprintf(orders_file,
@@ -732,7 +732,7 @@ closest_unvisited_star(struct ship_data *ship) {
         fprintf(orders_file, "%d %d %d", x, y, z);
         closest_star->visited_by[species_array_index] |= species_bit_mask;
         /* So that we don't send more than one ship to the same place. */
-    }else  {
+    }else {
         fprintf(orders_file, "???");
     }
 

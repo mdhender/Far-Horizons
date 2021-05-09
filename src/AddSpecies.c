@@ -144,7 +144,8 @@ get_xyz:
     for (i = ML; i <= BI; i++) {
 get_tl:
         printf("Enter %s tech level: ", tech_name[i]); fflush(stdout);
-        scanf("%d", &j); if (j < 0) {
+        scanf("%d", &j);
+        if (j < 0) {
             goto get_tl;
         }
         spec.tech_level[i]      = j;
@@ -194,7 +195,8 @@ get_gas:
     }
 
     printf("\n\nEnter number of gas required by species: "); fflush(stdout);
-    scanf("%d", &req_gas); if (req_gas < 1 || req_gas > 13) {
+    scanf("%d", &req_gas);
+    if (req_gas < 1 || req_gas > 13) {
         goto get_gas;
     }
     spec.required_gas = req_gas;

@@ -109,7 +109,7 @@ yet_again:
             /* Best match so far. */
             best_score         = n;
             best_species_index = species_index;
-        }else if (n > next_best_score)  {
+        }else if (n > next_best_score) {
             next_best_score = n;
         }
     }
@@ -125,7 +125,7 @@ yet_again:
         if (first_try) {
             first_try = FALSE;
             goto yet_again;
-        }else  {
+        }else {
             return(FALSE);
         }
     }

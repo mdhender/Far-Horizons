@@ -217,7 +217,7 @@ get_class_abbr() {
             if (toupper(*input_line_pointer) == 'S') {
                 sub_light = TRUE;
                 ++input_line_pointer;
-            }else  {
+            }else {
                 sub_light = FALSE;
             }
 

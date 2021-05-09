@@ -50,7 +50,7 @@ do_MINING_command() {
         if (increment == 0) {
             return;
         }
-    }else  {
+    }else {
         increment = value;
     }
 

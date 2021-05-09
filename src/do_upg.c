@@ -92,7 +92,7 @@ do_UPGRADE_command() {
         }
 
         age_reduction = (40 * amount_to_spend) / original_cost;
-    }else  {
+    }else {
         age_reduction = ship->age;
     }
 

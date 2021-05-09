@@ -135,7 +135,7 @@ main(int argc, char *argv[]) {
             sp_num[i] = i + 1;
         }
         do_all_species = TRUE;
-    }else  {
+    }else {
         do_all_species = FALSE;
     }
 
@@ -689,7 +689,7 @@ find_start:
                 if (get_value() && !isalpha(*input_line_pointer) && ((n = undistorted((int)value)) != 0)) {
                     distorted_name = TRUE;
                     goto att1;
-                }else if (get_name() < 5)  {
+                }else if (get_name() < 5) {
                     bad_species();
                     continue;
                 }
@@ -706,7 +706,7 @@ find_start:
                     if (n > best_score) {
                         best_score         = n;
                         best_species_index = i;
-                    }else if (n > next_best_score)  {
+                    }else if (n > next_best_score) {
                         next_best_score = n;
                     }
                 }
@@ -786,7 +786,7 @@ done_orders:
     }
 
     /* Check each battle.  If a species specified a BATTLE command but did
-    *   not specify any engage options, then add a DEFENSE_IN_PLACE option. */
+     *   not specify any engage options, then add a DEFENSE_IN_PLACE option. */
     bat = battle_base;
     for (battle_index = 0; battle_index < num_battles; battle_index++) {
         for (i = 0; i < bat->num_species_here; i++) {

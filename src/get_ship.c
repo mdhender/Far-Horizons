@@ -122,7 +122,7 @@ yet_again:
             best_score      = n;
             best_ship       = ship;
             best_ship_index = ship_index;
-        }else if (n > next_best_score)  {
+        }else if (n > next_best_score) {
             next_best_score = n;
         }
     }
