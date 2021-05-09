@@ -18,7 +18,7 @@ sed \
 
 cd "${game}" || exit 2
 
-export FH_SEED=1924085713
+export FH_SEED=
 
 python3 "${src}/tools/game_setup.py" < "${game}/players.csv"
 

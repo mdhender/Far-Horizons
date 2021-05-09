@@ -20,11 +20,13 @@ rnd(unsigned int max) {
         char *envSeed = getenv("FH_SEED");
         seedState = 1;
         if (envSeed != NULL) {
-            _lastRandom = 0;
             for (; *envSeed != 0; envSeed++) {
                 if (isdigit(*envSeed)) {
                     _lastRandom = _lastRandom * 10 + *envSeed - '0';
                 }
+            }
+            if (_lastRandom == 0) {
+                _lastRandom = 1924085713L;
             }
             seedState = 2;
         }
