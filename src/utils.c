@@ -14,8 +14,21 @@ unsigned long last_random = 1924085713L;        /* Random seed. */
 
 int
 rnd(unsigned int max) {
+    static int setSeed = 1;
     unsigned long a, b, c, cong_result, shift_result;
 
+    if (setSeed == 1) {
+        char *envSeed = getenv("FH_SEED");
+        if (envSeed != NULL) {
+            _lastRandom = 0;
+            for (; *envSeed != 0; envSeed++) {
+                if (isdigit(*envSeed)) {
+                    _lastRandom = _lastRandom * 10 + *envSeed - '0';
+                }
+            }
+        }
+        setSeed = 0;
+    }
     last_random = _lastRandom;
 
     /* For congruential method, multiply previous value by the
