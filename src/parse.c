@@ -65,6 +65,7 @@ again:
 }
 
 
+void
 skip_whitespace() {
     while (TRUE) {
         switch (*input_line_pointer) {

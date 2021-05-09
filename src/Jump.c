@@ -24,6 +24,7 @@ extern FILE *input_file, *log_file;
 
 void do_jump_orders();
 
+int
 main(int argc, char *argv[]) {
     int i, n, found, num_species, sp_num[MAX_SPECIES], sp_index,
         command, log_file_open, do_all_species;

@@ -345,7 +345,7 @@ next_gas:
     printf("\n\nTotal percentage = %d\%.\n", n);
 
     printf("\nEnter 'index, new gas number, new percent' or RETURN for as is: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -441,7 +441,7 @@ edit_species_stats() {
            species->name);
 
     printf("Species name is %s: ", species->name);
-    get_name(name);
+    get_namu(name);
     if (answer[0] == 27) {
         return;
     }else if (name[0] != '\0') {
@@ -449,7 +449,7 @@ edit_species_stats() {
     }
 
     printf("Species government name is %s: ", species->govt_name);
-    get_name(name);
+    get_namu(name);
     if (answer[0] == 27) {
         return;
     }else if (name[0] != '\0') {
@@ -457,7 +457,7 @@ edit_species_stats() {
     }
 
     printf("Species government type is %s: ", species->govt_type);
-    get_name(name);
+    get_namu(name);
     if (answer[0] == 27) {
         return;
     }else if (name[0] != '\0') {
@@ -480,7 +480,7 @@ next_tech_level:
     }
 
     printf("\nEnter 'tech number-space-new level' or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -501,7 +501,7 @@ next_tech_knowledge:
     }
 
     printf("\nEnter 'tech number-space-new knowledge' or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -521,7 +521,7 @@ next_tech_eps:
     }
 
     printf("\nEnter 'tech number-space-new eps' or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -560,7 +560,7 @@ next_contact_mask:
 
     printf("\n  Enter negative species number to delete bit, positive number to add bit,\n");
     printf("    or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -615,7 +615,7 @@ next_ally_mask:
 
     printf("\n  Enter negative species number to delete bit, positive number to add bit,\n");
     printf("    or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -670,7 +670,7 @@ next_enemy_mask:
 
     printf("\n  Enter negative species number to delete bit, positive number to add bit,\n");
     printf("    or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -913,7 +913,7 @@ next_item:
         printf("\n");
     }
     printf("\nEnter 'item number-space-new quantity' or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -975,7 +975,7 @@ create_nampla() {
 
     /* Get planet name and make an upper case copy. */
     printf("\nEnter name: ");
-    get_name(name);
+    get_namu(name);
     if (name[0] == 27 || name[0] == '\0') {
         return;
     }
@@ -1217,7 +1217,7 @@ next_item:
         printf("\n");
     }
     printf("\nEnter 'item number-space-new quantity' or RETURN to continue: ");
-    get_name(answer);
+    get_namu(answer);
     if (answer[0] == 27) {
         return;
     }else if (answer[0] != '\0') {
@@ -1266,7 +1266,7 @@ create_ship() {
 
     /* Get ship name and make an upper case copy. */
     printf("\nEnter name: ");
-    get_name(name);
+    get_namu(name);
     if (name[0] == 27 || name[0] == '\0') {
         return;
     }
@@ -1382,7 +1382,8 @@ int get_location(int need_planet) {
     return(TRUE);
 }
 
-get_name(char name[]) {
+void
+get_namu(char name[]) {
     int  i;
     char temp[1024];
 
@@ -1413,7 +1414,7 @@ again:
 }
 
 
-
+int
 get_value() {
     char temp[1024];
 
