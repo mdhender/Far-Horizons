@@ -28,7 +28,7 @@ extern struct ship_data *   ship, *ship_base;
 extern struct trans_data    transaction[MAX_TRANSACTIONS];
 
 
-
+void
 do_JUMP_command(int jumped_in_combat, int using_jump_portal) {
     int i, n, found, max_xyz, temp_x, temp_y, temp_z, difference,
         status, mishap_gv;

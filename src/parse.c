@@ -315,6 +315,7 @@ get_value() {
  * try to insert a comma in the proper position.  This routine should
  * be called only AFTER an error has been detected. */
 
+void
 fix_separator() {
     int n, first_class, fix_made, num_commas;
 

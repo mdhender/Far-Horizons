@@ -6,7 +6,7 @@ extern char  input_line[256];
 extern FILE *log_file;
 extern struct nampla_data *nampla;
 
-
+void
 do_VISITED_command() {
     int found;
 

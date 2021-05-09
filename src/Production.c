@@ -29,7 +29,7 @@ extern FILE *input_file, *log_file;
 extern struct star_data *  star_base;
 extern struct planet_data *planet_base;
 
-
+int
 main(int argc, char *argv[]) {
     int i, n, found, num_species, sp_num[MAX_SPECIES], sp_index,
         command, do_all_species;

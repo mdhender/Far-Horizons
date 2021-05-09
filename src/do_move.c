@@ -9,7 +9,7 @@ extern struct nampla_data *nampla;
 extern struct ship_data *  ship;
 
 
-
+void
 do_MOVE_command() {
     int i, n, found;
 

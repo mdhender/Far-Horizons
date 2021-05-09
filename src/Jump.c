@@ -22,6 +22,7 @@ extern long  last_random;
 extern char  input_line[256], *input_line_pointer;
 extern FILE *input_file, *log_file;
 
+void do_jump_orders();
 
 main(int argc, char *argv[]) {
     int i, n, found, num_species, sp_num[MAX_SPECIES], sp_index,
@@ -316,7 +317,7 @@ no_jump_orders:
 }
 
 
-
+void
 do_jump_orders() {
     int i, command;
 
