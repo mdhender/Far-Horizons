@@ -3,7 +3,7 @@
 
 extern struct galaxy_data galaxy;
 
-
+void
 get_galaxy_data() {
     int galaxy_fd;
 

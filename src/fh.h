@@ -226,8 +226,8 @@ struct species_data {
 #define X4           36 /* Unassigned. */
 #define X5           37 /* Unassigned. */
 
-#define MAX_ITEMS    38 /* Always bump this up to a multiple of two.
-                         * Don't forget to make room for zeroth element! */
+#define MAX_ITEMS    38 // Always bump this up to a multiple of two.
+                        // Don't forget to make room for zeroth element!
 
 
 /* Status codes for named planets. These are logically ORed together. */
@@ -471,3 +471,35 @@ extern short ship_tonnage[NUM_SHIP_CLASSES];
 extern short ship_cost[NUM_SHIP_CLASSES];
 extern char  command_abbr[NUM_COMMANDS][4];
 extern char  command_name[NUM_COMMANDS][16];
+
+// forward function declarations
+int   agrep_score(char *correct_string, char *unknown_string);
+void  check_high_tech_items(int tech, int old_tech_level, int new_tech_level);
+int   check_population(struct nampla_data *nampla);
+char *commas(long value);
+void  delete_nampla(struct nampla_data *nampla);
+void  delete_ship(struct ship_data *ship);
+int   distorted(int species_number);
+void  free_species_data();
+void  get_galaxy_data();
+void  get_location_data();
+void  get_planet_data();
+void  get_species();
+void  get_species_data();
+void  get_star_data();
+int   life_support_needed(struct species_data *species, struct planet_data *home, struct planet_data *colony);
+void  log_char(char c);
+void  log_int(int value);
+void  log_long(long value);
+void  log_message(char *message_filename);
+void  log_string(char string[]);
+int   rnd(unsigned int max);
+void  save_location_data();
+void  save_planet_data();
+void  save_species();
+void  save_species_data();
+void  save_star_data();
+void  set_planet();
+char *ship_name(struct ship_data *ship);
+int   star_visited(int x, int y, int z);
+int   undistorted(int distorted_species_number);

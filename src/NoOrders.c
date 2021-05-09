@@ -20,6 +20,8 @@ extern struct sp_loc_data  loc[MAX_LOCATIONS];
 extern struct star_data *  star_base;
 extern struct planet_data *planet_base;
 
+void closest_unvisited_star(struct ship_data *ship);
+void print_mishap_chance(struct ship_data *ship, int destx, int desty, int destz);
 
 main(int argc, char *argv[]) {
     int i, j, k, ship_index, locations_fd, my_loc_index,
@@ -638,6 +640,7 @@ unload_ship:
 }
 
 
+void
 print_mishap_chance(struct ship_data *ship, int destx, int desty, int destz) {
     int mishap_GV, mishap_age;
 
@@ -676,7 +679,7 @@ print_mishap_chance(struct ship_data *ship, int destx, int desty, int destz) {
 }
 
 
-
+void
 closest_unvisited_star(struct ship_data *ship) {
     int i, found, species_array_index, species_bit_number;
 

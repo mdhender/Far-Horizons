@@ -5,7 +5,7 @@ extern int num_stars;
 
 extern struct star_data *star_base;
 
-
+void
 save_star_data() {
     int star_fd;
 

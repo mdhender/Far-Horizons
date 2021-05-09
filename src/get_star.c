@@ -9,7 +9,7 @@ int num_stars, star_data_modified;
 
 struct star_data *star_base;
 
-
+void
 get_star_data() {
     int star_fd;
 

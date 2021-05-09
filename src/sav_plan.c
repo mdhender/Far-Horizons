@@ -5,7 +5,7 @@ extern int num_planets;
 
 extern struct planet_data *planet_base;
 
-
+void
 save_planet_data() {
     int planet_fd;
 

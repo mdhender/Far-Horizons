@@ -50,7 +50,7 @@ long extra_ships   = NUM_EXTRA_SHIPS;
 
 extern struct galaxy_data galaxy;
 
-
+void
 get_species_data() {
     int species_fd, species_index;
 
@@ -126,7 +126,7 @@ get_species_data() {
 }
 
 
-
+void
 save_species_data() {
     int species_fd, species_index;
 
@@ -186,7 +186,7 @@ save_species_data() {
 }
 
 
-
+void
 free_species_data() {
     int species_index;
 
@@ -208,7 +208,7 @@ free_species_data() {
 
 
 /* The following two routines will delete a ship or nampla record. */
-
+void
 delete_ship(struct ship_data *ship) {
     int i;
 
@@ -225,7 +225,7 @@ delete_ship(struct ship_data *ship) {
     strcpy(ship->name, "Unused");
 }
 
-
+void
 delete_nampla(struct nampla_data *nampla) {
     int i;
 
@@ -418,7 +418,7 @@ int log_stdout        = TRUE;
 
 char log_line[128];
 
-
+void
 log_char(char c) {
     int i, temp_position;
 
@@ -502,7 +502,7 @@ log_char(char c) {
     }
 }
 
-
+void
 log_string(char string[]) {
     int i, length;
 
@@ -517,7 +517,7 @@ log_string(char string[]) {
     }
 }
 
-
+void
 log_int(int value) {
     char string[16];
 
@@ -530,7 +530,7 @@ log_int(int value) {
     log_string(string);
 }
 
-
+void
 log_long(long value) {
     char string[16];
 
@@ -549,6 +549,7 @@ int num_locs = 0;
 
 struct sp_loc_data loc[MAX_LOCATIONS];
 
+void
 get_location_data() {
     int locations_fd;
 
@@ -578,7 +579,7 @@ get_location_data() {
 }
 
 
-
+void
 save_location_data() {
     int locations_fd;
 
@@ -651,6 +652,7 @@ undistorted(int distorted_species_number) {
     return(0);   /* Not a legitimate species. */
 }
 
+void
 log_message(char *message_filename) {
     char message_line[256];
 
@@ -763,6 +765,7 @@ life_support_needed(struct species_data *species, struct planet_data *home, stru
     return(ls_needed);
 }
 
+void
 check_high_tech_items(int tech, int old_tech_level, int new_tech_level) {
     int i;
 

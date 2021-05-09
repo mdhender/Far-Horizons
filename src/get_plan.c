@@ -9,7 +9,7 @@ int num_planets, planet_data_modified;
 
 struct planet_data *planet_base;
 
-
+void
 get_planet_data() {
     int planet_fd;
 

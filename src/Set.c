@@ -21,6 +21,10 @@ extern struct star_data *  star_base;
 extern struct planet_data *planet_base;
 
 
+void set_nampla();
+void set_ship();
+void set_species();
+void set_star();
 
 main(int argc, char *argv[]) {
     num_arguments = argc;
@@ -43,6 +47,7 @@ main(int argc, char *argv[]) {
     exit(-1);
 }
 
+void
 set_species() {
     long n;
 
@@ -131,7 +136,7 @@ next_item:
 }
 
 
-
+void
 set_nampla() {
     int i, found;
 
@@ -287,7 +292,7 @@ again:
 }
 
 
-
+void
 set_ship() {
     int i, found;
 
@@ -462,8 +467,7 @@ again:
     return;
 }
 
-
-
+void
 set_star() {
     int i, x, y, z, found;
 
@@ -532,7 +536,7 @@ next_item:
 }
 
 
-
+void
 set_planet() {
     int i, x, y, z, pn, found;
 
@@ -674,7 +678,7 @@ next_item:
 }
 
 
-
+void
 get_species() {
     int species_fd;
 
@@ -739,7 +743,7 @@ get_species() {
 }
 
 
-
+void
 save_species() {
     int species_fd;
 
