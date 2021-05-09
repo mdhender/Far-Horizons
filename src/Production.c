@@ -33,11 +33,7 @@ extern struct star_data		*star_base;
 extern struct planet_data	*planet_base;
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, n, found, num_species, sp_num[MAX_SPECIES], sp_index,
 		command, do_all_species;
@@ -293,7 +289,6 @@ done_orders:
 
 
 do_production_orders ()
-
 {
     int		i, command;
 

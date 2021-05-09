@@ -5,6 +5,8 @@ then
     mkdir ../bin
 fi
 
+rm *.o
+
 make -f mk.newgal
 make -f mk.mho
 make -f mk.home

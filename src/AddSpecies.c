@@ -22,11 +22,7 @@ extern struct planet_data	*planet_base;
 
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, j, x, y, z, pn, temp, found, percent, species_fd,
 		good_gas[14], num_neutral, req_gas, galaxy_fd,
@@ -427,10 +423,7 @@ get_xyz:
     exit (0);
 }
 
-get_name (name)
-
-char	name[];
-
+get_name (char name[])
 {
     int		i;
     char	temp[1024];

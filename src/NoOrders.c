@@ -24,11 +24,7 @@ extern struct star_data		*star_base;
 extern struct planet_data	*planet_base;
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, j, k, ship_index, locations_fd, my_loc_index,
 		nampla_index, its_loc_index, tonnage, found, alien_number,
@@ -532,11 +528,7 @@ unload_ship:
 }
 
 
-print_mishap_chance (ship, destx, desty, destz)
-
-struct ship_data	*ship;
-int			destx, desty, destz;
-
+print_mishap_chance (struct ship_data *ship, int destx, int desty, int destz)
 {
     int		mishap_GV, mishap_age;
 
@@ -576,10 +568,7 @@ int			destx, desty, destz;
 
 
 
-closest_unvisited_star (ship)
-
-struct ship_data	*ship;
-
+closest_unvisited_star (struct ship_data *ship)
 {
     int		i, found, species_array_index, species_bit_number;
 
