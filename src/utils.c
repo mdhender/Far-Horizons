@@ -5,6 +5,8 @@
    It uses the so-called "Algorithm M" method, which is a combination
    of the congruential and shift-register methods. */
 
+static unsigned long	_lastRandom = 1924085713L;	// random seed
+
 unsigned long	last_random = 1924085713L;	/* Random seed. */
 
 int rnd (max)
@@ -13,6 +15,8 @@ unsigned int	max;
 
 {
 	unsigned long	a, b, c, cong_result, shift_result;
+
+	last_random = _lastRandom;
 
 	/* For congruential method, multiply previous value by the
 	   prime number 16417. */
@@ -31,6 +35,8 @@ unsigned int	max;
 	last_random = cong_result ^ shift_result;
 
 	a = last_random & 0x0000FFFF;
+
+	_lastRandom = last_random;
 
 	return (int) ((a * (long) max) >> 16) + 1L;
 }
