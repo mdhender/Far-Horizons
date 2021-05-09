@@ -27,6 +27,7 @@ python3 "${src}/tools/create_map.py"
 python3 "${src}/tools/game_packet.py"
 
 rm -f /tmp/alpha.sum /tmp/beta/sum
+cd ~/alpha && "${src}/bin/BinaryToAscii"
 cd ~/alpha && sha1sum *.dat > /tmp/alpha.sum
 cd ~/beta && sha1sum *.dat > /tmp/beta.sum
 diff /tmp/alpha.sum /tmp/beta.sum || {
@@ -34,4 +35,5 @@ diff /tmp/alpha.sum /tmp/beta.sum || {
     exit 2
 }
 echo " info: checksums match"
+
 exit 0
