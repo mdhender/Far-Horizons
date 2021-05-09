@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <malloc.h>
 
+#include <stdlib.h>
 
 #define TRUE                               1
 #define FALSE                              0
