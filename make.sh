@@ -3,8 +3,6 @@
 # sudo apt-get install build-essential
 # sudo apt install poppler-utils ghostscript  python3-dateutil
 
-#!/bin/bash
-
 galaxy="alpha"
 src="/home/mdhender/Far-Horizons"
 game="/home/mdhender/${galaxy}"
@@ -19,6 +17,8 @@ sed \
     "${src}/tools/farhorizons.yml.example" > "${game}/farhorizons.yml" || exit 2
 
 cd "${game}" || exit 2
+
+export FH_SEED=1924085713
 
 python3 "${src}/tools/game_setup.py" < "${game}/players.csv"
 

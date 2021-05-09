@@ -8,17 +8,17 @@
  * It uses the so-called "Algorithm M" method, which is a combination
  * of the congruential and shift-register methods. */
 
-static unsigned long _lastRandom = 1924085713L; // random seed
-
 unsigned long last_random = 1924085713L;        /* Random seed. */
 
 int
 rnd(unsigned int max) {
-    static int setSeed = 1;
-    unsigned long a, b, c, cong_result, shift_result;
+    static unsigned long _lastRandom; // random seed
+    static int           seedState = 0;
+    unsigned long        a, b, c, cong_result, shift_result;
 
-    if (setSeed == 1) {
+    if (seedState == 0) {
         char *envSeed = getenv("FH_SEED");
+        seedState = 1;
         if (envSeed != NULL) {
             _lastRandom = 0;
             for (; *envSeed != 0; envSeed++) {
@@ -26,10 +26,12 @@ rnd(unsigned int max) {
                     _lastRandom = _lastRandom * 10 + *envSeed - '0';
                 }
             }
+            seedState = 2;
         }
-        setSeed = 0;
     }
-    last_random = _lastRandom;
+    if (seedState == 2) {
+        last_random = _lastRandom;
+    }
 
     /* For congruential method, multiply previous value by the
      * prime number 16417. */
