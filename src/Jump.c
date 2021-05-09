@@ -168,12 +168,12 @@ find_start:
 
         /* Search for START JUMPS order. */
         found = FALSE;
-        for (;!found;) {
+        for (; !found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts
                  *      with "start". */
-                for (;TRUE;) {
+                for (; TRUE;) {
                     command = get_command();
                     if (command < 0) {
                         fprintf(stderr,
@@ -317,7 +317,6 @@ no_jump_orders:
     exit(0);
 }
 
-
 void
 do_jump_orders() {
     int i, command;
@@ -328,7 +327,7 @@ do_jump_orders() {
                species_number, species->name);
     }
 
-    for (;TRUE;) {
+    for (; TRUE;) {
         command = get_command();
 
         if (command == 0) {

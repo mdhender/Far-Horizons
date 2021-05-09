@@ -149,7 +149,7 @@ find_start:
 
         /* Search for START PRODUCTION order. */
         found = FALSE;
-        for (;!found;) {
+        for (; !found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts
@@ -282,8 +282,6 @@ done_orders:
     save_transaction_data();
     exit(0);
 }
-
-
 
 do_production_orders() {
     int i, command;

@@ -129,7 +129,6 @@ get_species_data() {
     }
 }
 
-
 void
 save_species_data() {
     int species_fd, species_index;
@@ -189,7 +188,6 @@ save_species_data() {
     }
 }
 
-
 void
 free_species_data() {
     int species_index;
@@ -208,8 +206,6 @@ free_species_data() {
         }
     }
 }
-
-
 
 /* The following two routines will delete a ship or nampla record. */
 void
@@ -245,8 +241,6 @@ delete_nampla(struct nampla_data *nampla) {
     nampla->pn = 99;
     strcpy(nampla->name, "Unused");
 }
-
-
 
 /* This routine is intended to take a long argument and return a pointer
  * to a string that has embedded commas to make the string more readable. */
@@ -437,7 +431,7 @@ log_char(char c) {
     if ((c == ' ' || c == '\n') && log_position > 77) {
         /* Find closest preceeding space. */
         temp_position = log_position - 1;
-        for (;log_line[temp_position] != ' ';) {
+        for (; log_line[temp_position] != ' ';) {
             --temp_position;
         }
 
@@ -547,8 +541,6 @@ log_long(long value) {
     log_string(string);
 }
 
-
-
 int num_locs = 0;
 
 struct sp_loc_data loc[MAX_LOCATIONS];
@@ -582,7 +574,6 @@ get_location_data() {
     close(locations_fd);
 }
 
-
 void
 save_location_data() {
     int locations_fd;
@@ -613,8 +604,6 @@ save_location_data() {
 
     close(locations_fd);
 }
-
-
 
 /* The following routine provides the 'distorted' species number used to
  *      identify a species that uses field distortion units. The input
@@ -671,14 +660,12 @@ log_message(char *message_filename) {
     }
 
     /* Copy message to log file. */
-    for (;fgets(message_line, 256, message_file) != NULL;) {
+    for (; fgets(message_line, 256, message_file) != NULL;) {
         fputs(message_line, log_file);
     }
 
     fclose(message_file);
 }
-
-
 
 /* This routine will set or clear the POPULATED bit for a nampla.  It will
  * return TRUE if the nampla is populated or FALSE if not. It will also
@@ -796,8 +783,6 @@ check_high_tech_items(int tech, int old_tech_level, int new_tech_level) {
         log_string("  You now have the technology to do interspecies construction.\n");
     }
 }
-
-
 
 /* The following routine will return a score indicating how closely two
  * strings match.  If the score is exactly 10000, then the strings are

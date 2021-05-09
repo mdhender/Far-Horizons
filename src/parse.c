@@ -81,8 +81,6 @@ skip_whitespace() {
     }
 }
 
-
-
 /* The following "get" routines will return 0 if the item found was not
  * of the appropriate type, and 1 or greater if an item of the correct
  * type was found. */
@@ -178,7 +176,7 @@ get_class_abbr() {
     /* Check for IDs that are followed by one or more digits or letters. */
     i           = 2;
     digit_start = input_line_pointer;
-    for (;isalnum(*input_line_pointer);) {
+    for (; isalnum(*input_line_pointer);) {
         input_abbr[i++] = *input_line_pointer++;
         input_abbr[i]   = '\0';
     }
@@ -209,7 +207,7 @@ get_class_abbr() {
             tonnage            = ship_tonnage[i];
             if (i == TR) {
                 tonnage = 0;
-                for (;isdigit(*input_line_pointer);) {
+                for (; isdigit(*input_line_pointer);) {
                     tonnage = (10 * tonnage) + (*input_line_pointer - '0');
                     ++input_line_pointer;
                 }
@@ -275,7 +273,7 @@ get_name() {
     }
 
     /* Remove any final spaces in name. */
-    for (;name_length > 0;) {
+    for (; name_length > 0;) {
         c = original_name[name_length - 1];
         if (c != ' ') {
             break;
@@ -304,7 +302,7 @@ get_value() {
     }
     /* Skip numeric string. */
     ++input_line_pointer;       /* Skip first sign or digit. */
-    for (;isdigit(*input_line_pointer);) {
+    for (; isdigit(*input_line_pointer);) {
         ++input_line_pointer;
     }
 

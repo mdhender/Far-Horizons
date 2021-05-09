@@ -139,7 +139,6 @@ next_item:
     exit(0);
 }
 
-
 void
 set_nampla() {
     int i, found;
@@ -294,7 +293,6 @@ again:
 
     return;
 }
-
 
 void
 set_ship() {
@@ -539,7 +537,6 @@ next_item:
     exit(0);
 }
 
-
 void
 set_planet() {
     int i, x, y, z, pn, found;
@@ -681,7 +678,6 @@ next_item:
     exit(0);
 }
 
-
 void
 get_species() {
     int species_fd;
@@ -746,7 +742,6 @@ get_species() {
     close(species_fd);
 }
 
-
 void
 save_species() {
     int species_fd;
@@ -794,8 +789,6 @@ save_species() {
     close(species_fd);
 }
 
-
-
 /* Get a class abbreviation and return TECH_ID, ITEM_CLASS, SHIP_CLASS,
  * PLANET_ID, SPECIES_ID or ALLIANCE_ID as appropriate, or UNKNOWN if it
  * cannot be identified. Also, set "abbr_type" to this value. If it is
@@ -830,7 +823,7 @@ get_class_abbr(char *arg) {
     /* Check for IDs that are followed by one or more digits or letters. */
     i           = 2;
     digit_start = arg;
-    for (;isalnum(*arg);) {
+    for (; isalnum(*arg);) {
         input_abbr[i++] = *arg++;
         input_abbr[i]   = '\0';
     }
@@ -861,7 +854,7 @@ get_class_abbr(char *arg) {
             tonnage    = ship_tonnage[i];
             if (i == TR) {
                 tonnage = 0;
-                for (;isdigit(*arg);) {
+                for (; isdigit(*arg);) {
                     tonnage = (10 * tonnage) + (*arg - '0');
                     ++arg;
                 }

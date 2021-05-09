@@ -94,7 +94,7 @@ do_cost:
     amount_spent    = 0;
     initial_level   = sp_tech_level[tech];
     current_level   = initial_level;
-    for (;current_level < species->tech_knowledge[tech];) {
+    for (; current_level < species->tech_knowledge[tech];) {
         cost_for_one_level  = current_level * current_level;
         cost_for_one_level -= cost_for_one_level / 4;     /* 25% discount. */
         if (funds_remaining < cost_for_one_level) {

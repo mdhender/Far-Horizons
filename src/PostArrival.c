@@ -147,7 +147,7 @@ find_start:
 
         /* Search for START POST-ARRIVAL order. */
         found = FALSE;
-        for (;!found;) {
+        for (; !found;) {
             command = get_command();
             if (command == MESSAGE) {
                 /* Skip MESSAGE text. It may contain a line that starts

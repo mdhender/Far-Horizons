@@ -401,7 +401,7 @@ main(int argc, char *argv[]) {
                     max_cost = donor_species->econ_units;
                 }
                 actual_cost = 0;
-                for (;new_level < their_level;) {
+                for (; new_level < their_level;) {
                     one_point_cost  = new_level * new_level;
                     one_point_cost -= one_point_cost / 4;  /* 25% discount. */
                     if ((actual_cost + one_point_cost) > max_cost) {
@@ -446,7 +446,7 @@ main(int argc, char *argv[]) {
              *  process. */
             i = experience_points;
             j = old_tech_level;
-            for (;i >= j * j;) {
+            for (; i >= j * j;) {
                 i -= j * j;
                 ++j;
             }
@@ -467,7 +467,7 @@ main(int argc, char *argv[]) {
             }
 
             /* Allocate the rest randomly. */
-            for (;experience_points >= new_tech_level;) {
+            for (; experience_points >= new_tech_level;) {
                 experience_points -= new_tech_level;
                 n = new_tech_level;
 

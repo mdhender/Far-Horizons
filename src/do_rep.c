@@ -158,7 +158,7 @@ pool_repair:
 
     /* Repair ships, starting with the most heavily damaged. */
     dr_units_used = 0;
-    for (;total_dr_units > 0;) {
+    for (; total_dr_units > 0;) {
         /* Find most heavily damaged ship. */
         max_age = 0;
         ship    = ship_base - 1;

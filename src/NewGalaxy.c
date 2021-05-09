@@ -95,7 +95,7 @@ again2:
              * (long)STANDARD_GALACTIC_RADIUS
              / (long)STANDARD_NUMBER_OF_STAR_SYSTEMS;
     l_radius = 2L;
-    for (;l_radius * l_radius * l_radius < volume;) {
+    for (; l_radius * l_radius * l_radius < volume;) {
         ++l_radius;
     }
 again3:
@@ -146,7 +146,7 @@ again3:
 
     /* Get locations of stars. */
     num_stars = 0;
-    for (;num_stars < desired_num_stars;) {
+    for (; num_stars < desired_num_stars;) {
         x = rnd(galactic_diameter) - 1;
         y = rnd(galactic_diameter) - 1;
         z = rnd(galactic_diameter) - 1;
@@ -259,7 +259,7 @@ again3:
                 for (i = 1; i <= n; i++) {
                     star_num_planets += rnd(d);
                 }
-                for (;star_num_planets > 9;) {  /* Trim down if too many. */
+                for (; star_num_planets > 9;) {  /* Trim down if too many. */
                     star_num_planets -= rnd(3);
                 }
                 if (star_num_planets < 1) {
@@ -311,7 +311,7 @@ again3:
         }
 
         /* There is a wormhole here. Get coordinates of other end. */
-        for (;TRUE;) {
+        for (; TRUE;) {
             n         = rnd(num_stars);
             worm_star = star_base + n - 1;
             if (worm_star == star) {

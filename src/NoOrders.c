@@ -118,7 +118,7 @@ main(int argc, char *argv[]) {
         }
 
         /* Copy message to log file. */
-        for (;fgets(message_line, 131, message_file) != NULL;) {
+        for (; fgets(message_line, 131, message_file) != NULL;) {
             fputs(message_line, log_file);
         }
 
@@ -681,7 +681,6 @@ print_mishap_chance(struct ship_data *ship, int destx, int desty, int destz) {
     fprintf(orders_file, "mishap chance = %ld.%02ld%%",
             mishap_chance / 100L, mishap_chance % 100L);
 }
-
 
 void
 closest_unvisited_star(struct ship_data *ship) {

@@ -171,7 +171,7 @@ void
 encode(STARINFO *head, FILE *outfile) {
     STARINFO *current = head;
 
-    for (;current;) {
+    for (; current;) {
         dostar(current, outfile);
         current = current->next;
     }
@@ -186,12 +186,12 @@ emittext(FILE *outfile, char *text, int size, float psx, float psy, int lino) {
         OUT("gsave 1 setgray");
         fputc('(', outfile);
         do {
-            for (;*ptext && *ptext != '{';) {
+            for (; *ptext && *ptext != '{';) {
                 fputc(*ptext++, outfile);
             }
             if (*ptext == '{') {
                 fprintf(outfile, ") true charpath\n%d greek (", size);
-                for (;*++ptext && *ptext != '}';) {
+                for (; *++ptext && *ptext != '}';) {
                     fputc(*ptext, outfile);
                 }
                 fprintf(outfile, ") true charpath\n%d roman (", size);
@@ -202,12 +202,12 @@ emittext(FILE *outfile, char *text, int size, float psx, float psy, int lino) {
     }
     fputc('(', outfile);
     do {
-        for (;*text && *text != '{';) {
+        for (; *text && *text != '{';) {
             fputc(*text++, outfile);
         }
         if (*text == '{') {
             fprintf(outfile, ") show\n%d greek (", size);
-            for (;*++text && *text != '}';) {
+            for (; *++text && *text != '}';) {
                 fputc(*text, outfile);
             }
             fprintf(outfile, ") show\n%d roman (", size);
@@ -253,7 +253,7 @@ calcgrid(LIMINFO *lim, FLAGINFO *flag, int *gridsize) {
     }
     mapsize  /= 20;
     reduction = 1;
-    for (;mapsize >= 10;) {
+    for (; mapsize >= 10;) {
         mapsize   /= 10;
         reduction *= 10;
     }
@@ -546,7 +546,7 @@ drawstars3D(STARINFO *head, FILE *outfile, LIMINFO *lim, FLAGINFO *flag) {
     float     xoff, yoff, zoff, poff;
     STARINFO *current = head;
 
-    for (;current;) {
+    for (; current;) {
         getcoords(current, flag, &psx, &psy, &psz, &psr);
         xoff = TPSA * ((psx - lim->plotxmin) / lim->mapwidth);
         yoff = TPSB * ((psy - lim->plotymin) / lim->mapwidth);
@@ -587,7 +587,7 @@ drawstars(STARINFO *head, FILE *outfile, LIMINFO *lim, FLAGINFO *flag) {
     char      zstr[10];
     STARINFO *current = head;
 
-    for (;current;) {
+    for (; current;) {
         getcoords(current, flag, &psx, &psy, &psz, &psr);
         psx = -130 + 500 * ((psx - lim->plotxmin) / lim->mapwidth);
         psy = -250 + 500 * ((psy - lim->plotymin) / lim->mapwidth);
@@ -618,7 +618,7 @@ getlims(STARINFO *head, LIMINFO *lim) {
     lim->ymin = lim->ymax = current->y;
     lim->zmin = lim->zmax = current->z;
     current   = current->next;
-    for (;current;) {
+    for (; current;) {
         lim->xmin = (lim->xmin < current->x) ? lim->xmin : current->x;
         lim->ymin = (lim->ymin < current->y) ? lim->ymin : current->y;
         lim->zmin = (lim->zmin < current->z) ? lim->zmin : current->z;
@@ -639,19 +639,19 @@ normalise(STARINFO *head, LIMINFO *lim) {
     xcent = (lim->xmin + lim->xmax) / 2;
     ycent = (lim->ymin + lim->ymax) / 2;
     zcent = (lim->zmin + lim->zmax) / 2;
-    for (;current;) {
+    for (; current;) {
         current->x -= xcent;
         current->y -= ycent;
         current->z -= zcent;
         current     = current->next;
     }
     maxdist = 0;
-    for (;current;) {
+    for (; current;) {
         dist    = sqrt(SQR(current->x) + SQR(current->y) + SQR(current->z));
         maxdist = MAX(maxdist, dist);
         current = current->next;
     }
-    for (;current;) {
+    for (; current;) {
         current->x /= maxdist;
         current->y /= maxdist;
         current->z /= maxdist;
@@ -668,14 +668,14 @@ doorbits(STARINFO *head, FILE *outfile) {
     float     xfactor, yfactor;
 
     header(outfile);
-    for (;current;) {
+    for (; current;) {
         if (current->planet) {
             OUT("0 setlinewidth");
             plan   = current->planet;
             maxmin = (1 - plan->eccentricity) * plan->orbit;
             maxmax = (1 + plan->eccentricity) * plan->orbit;
             plan   = plan->next;
-            for (;plan;) {
+            for (; plan;) {
                 maxmin = MAX(maxmin, ((1 - plan->eccentricity) * plan->orbit));
                 maxmax = MAX(maxmax, ((1 + plan->eccentricity) * plan->orbit));
                 plan   = plan->next;
@@ -683,7 +683,7 @@ doorbits(STARINFO *head, FILE *outfile) {
             psconv   = PSMAX / ((maxmax + maxmin) / 2);
             pssunoff = psconv * (maxmax - (maxmin + maxmax) / 2);
             plan     = current->planet;
-            for (;plan;) {
+            for (; plan;) {
                 pscentre = pssunoff - psconv * (plan->eccentricity * plan->orbit);
                 fprintf(outfile, "gsave %f 0 translate\n", pscentre);
                 xfactor = plan->orbit * psconv;
@@ -753,8 +753,8 @@ getargs(int argc, char *argv[], char *filename, LIMINFO *lim, FLAGINFO *flag) {
     flag->c = flag->l = flag->g = flag->t = flag->r = flag->L = flag->h = 0;
     flag->o = 0;
 
-    for (;--argc > 0 && (**++argv) == '-';) {
-        for (;c = *++*argv;) {
+    for (; --argc > 0 && (**++argv) == '-';) {
+        for (; c = *++*argv;) {
             switch (c) {
             case 'x': flag->x = 1; break;
 
@@ -790,8 +790,8 @@ getargs(int argc, char *argv[], char *filename, LIMINFO *lim, FLAGINFO *flag) {
                     printf("%s -h: invalid planeheight (%s)\n\n", progname, *argv);
                     exit(1);
                 }
-                for (;*(*argv + 1);) { /* Don't ask,     */
-                    *++*argv;          /* just DON'T ask */
+                for (; *(*argv + 1);) { /* Don't ask,     */
+                    *++*argv;           /* just DON'T ask */
                 }
                 break;
 
@@ -815,8 +815,8 @@ getargs(int argc, char *argv[], char *filename, LIMINFO *lim, FLAGINFO *flag) {
                            progname, *argv);
                     exit(1);
                 }
-                for (;*(*argv + 1);) { /* Don't ask,     */
-                    *++*argv;          /* just DON'T ask */
+                for (; *(*argv + 1);) { /* Don't ask,     */
+                    *++*argv;           /* just DON'T ask */
                 }
                 break;
 
@@ -844,8 +844,8 @@ getargs(int argc, char *argv[], char *filename, LIMINFO *lim, FLAGINFO *flag) {
                            progname, *argv);
                     exit(1);
                 }
-                for (;*(*argv + 1);) { /* Don't ask,     */
-                    *++*argv;          /* just DON'T ask */
+                for (; *(*argv + 1);) { /* Don't ask,     */
+                    *++*argv;           /* just DON'T ask */
                 }
                 break;
 
@@ -921,7 +921,7 @@ getdata(STARINFO **head, FILE *infile) {
     tailmoon = NULL;
     linenum  = 1;
 
-    for (;fgets(line, LINELEN, infile;) != NULL) {
+    for (; fgets(line, LINELEN, infile; ) != NULL) {
         switch (tolower(*line)) {
         case '/': break;
 

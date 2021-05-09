@@ -1413,7 +1413,6 @@ again:
     name[i] = '\0';
 }
 
-
 int
 get_value() {
     char temp[1024];

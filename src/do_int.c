@@ -200,7 +200,7 @@ handle_intercept(int intercept_index) {
         return;                         /* Nothing to intercept. */
     }
     num_ships_left = num_enemy_ships;
-    for (;num_ships_left > 0;) {
+    for (; num_ships_left > 0;) {
         /* Select ship for interception. */
         enemy_index = rnd(num_enemy_ships) - 1;
         if (enemy_ship[enemy_index] == NULL) {

@@ -47,7 +47,7 @@ do_bombardment(int unit_index, struct action_data *act) {
     total_bomb_damage = act->bomb_damage[unit_index];
 
     /* Keep about 2 significant digits. */
-    for (;total_bomb_damage > 1000;) {
+    for (; total_bomb_damage > 1000;) {
         total_bomb_damage /= 10;
         CS_bomb_damage    /= 10;
     }

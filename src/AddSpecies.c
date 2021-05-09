@@ -250,7 +250,7 @@ get_gas:
         good_gas[H2O] = 1;
         ++num_neutral;
     }
-    for (;num_neutral < 7;) {
+    for (; num_neutral < 7;) {
         i = rnd(13);
         if (good_gas[i] == 0) {
             good_gas[i] = 1;
