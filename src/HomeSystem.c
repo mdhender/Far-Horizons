@@ -3,10 +3,6 @@
  * arguments, it will randomly select an X Y Z that is at least 10 parsecs from
  * all other home systems. */
 
-
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

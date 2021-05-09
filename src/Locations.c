@@ -6,9 +6,6 @@
  * be run if you run Finish on fewer than all species and decide to keep the
  * resulting planets.dat file. */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

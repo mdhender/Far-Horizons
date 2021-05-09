@@ -1,5 +1,5 @@
 
-NEAR_OBJS = Near.o utils.o get_gal.o get_star.o get_plan.o scan.o
+NEAR_OBJS = Near.o globals.o utils.o get_gal.o get_star.o get_plan.o scan.o
 
 
 Near: $(NEAR_OBJS)
@@ -19,6 +19,9 @@ get_star.o: get_star.c fh.h
 
 get_plan.o: get_plan.c fh.h
 	cc -no-pie -c get_plan.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c
 
 scan.o: scan.c fh.h
 	cc -no-pie -c scan.c

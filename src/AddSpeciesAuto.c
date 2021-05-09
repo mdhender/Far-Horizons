@@ -1,8 +1,5 @@
 /* This is a modified non-interactive version of AddSpecies */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 int species_number;

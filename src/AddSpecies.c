@@ -1,9 +1,6 @@
 /* This program will allow the gamemaster to add a new species to the
  * game. */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 int species_number;

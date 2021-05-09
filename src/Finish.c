@@ -7,9 +7,6 @@
  * housekeeping chores.
  */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 
@@ -30,6 +27,7 @@ extern struct planet_data *planet_base;
 extern struct trans_data   transaction[MAX_TRANSACTIONS];
 extern struct sp_loc_data  loc[MAX_LOCATIONS];
 
+int alien_is_visible(char x, char y, char z, int species_number, int alien_number);
 
 main(int argc, char *argv[]) {
     int i, j, n, rec, don, nampla_index, ship_index, ls_needed,
@@ -1214,7 +1212,7 @@ print_header() {
 }
 
 
-
+int
 alien_is_visible(char x, char y, char z, int species_number, int alien_number) {
     int i, j;
 

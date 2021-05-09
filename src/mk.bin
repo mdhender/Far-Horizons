@@ -1,5 +1,5 @@
 
-BINARY1 = BinaryToAscii.o get_gal.o get_star.o get_plan.o utils.o
+BINARY1 = BinaryToAscii.o globals.o get_gal.o get_star.o get_plan.o utils.o
 
 BINARY_OBJS = $(BINARY1)
 
@@ -20,3 +20,6 @@ get_star.o: get_star.c fh.h
 
 get_plan.o: get_plan.c fh.h
 	cc -no-pie -c get_plan.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c

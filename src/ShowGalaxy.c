@@ -6,9 +6,6 @@
  * for ideal home planet, "C" stands for ideal colony, and "S" is used for
  * all other stars. */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

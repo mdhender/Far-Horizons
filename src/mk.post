@@ -4,7 +4,7 @@ POST2 = get_gal.o get_star.o get_plan.o do_land.o dis_ship.o do_deep.o do_ally.o
 POST3 = get_transact.o get_spnam.o do_name.o do_orbit.o do_tech.o do_send.o do_des.o
 POST4 = sav_star.o get_loc.o get_ship.o gam_abo.o do_mes.o do_terr.o do_enemy.o do_tel.o do_teach.o get_transfer.o
 
-POST_OBJS = PostArrival.o $(POST1) $(POST2) $(POST3) $(POST4)
+POST_OBJS = PostArrival.o globals.o $(POST1) $(POST2) $(POST3) $(POST4)
 CC = cc -g -no-pie
 
 PostArrival: $(POST_OBJS)
@@ -36,6 +36,9 @@ sav_star.o: sav_star.c fh.h
 
 get_transact.o: get_transact.c fh.h
 	$(CC) -c get_transact.c
+
+globals.o: globals.c fh.h
+	$(CC) -c globals.c
 
 sav_transact.o: sav_transact.c fh.h
 	$(CC) -c sav_transact.c

@@ -1,5 +1,5 @@
 
-MHO_OBJS = MakeHomes.o get_star.o utils.o
+MHO_OBJS = MakeHomes.o globals.o get_star.o utils.o
 
 
 MakeHomes: $(MHO_OBJS)
@@ -13,3 +13,6 @@ utils.o: utils.c fh.h
 
 get_star.o: get_star.c fh.h
 	cc -no-pie -c get_star.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c

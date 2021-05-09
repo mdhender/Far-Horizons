@@ -1,5 +1,5 @@
 
-EDIT_OBJS = Edit.o utils.o get_gal.o get_star.o get_plan.o do_locs.o sav_plan.o sav_star.o gen_plan.o
+EDIT_OBJS = Edit.o globals.o utils.o get_gal.o get_star.o get_plan.o do_locs.o sav_plan.o sav_star.o gen_plan.o
 
 
 Edit: $(EDIT_OBJS)
@@ -19,6 +19,9 @@ get_star.o: get_star.c fh.h
 
 get_plan.o: get_plan.c fh.h
 	cc -no-pie -c get_plan.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c
 
 sav_star.o: sav_star.c fh.h
 	cc -no-pie -c sav_star.c

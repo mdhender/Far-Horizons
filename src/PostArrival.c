@@ -1,5 +1,3 @@
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

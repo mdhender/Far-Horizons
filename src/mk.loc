@@ -2,7 +2,7 @@
 LOC1 = utils.o do_locs.o
 LOC2 = get_gal.o get_plan.o get_star.o sav_plan.o
 
-LOC_OBJS = Locations.o $(LOC1) $(LOC2)
+LOC_OBJS = Locations.o globals.o $(LOC1) $(LOC2)
 
 Locations: $(LOC_OBJS)
 	cc $(LOC_OBJS) -no-pie -o ../bin/Locations
@@ -21,6 +21,9 @@ get_plan.o: get_plan.c fh.h
 
 get_star: get_star.c fh.h
 	cc -no-pie -c get_star.c
+
+globals: globals.c fh.h
+	cc -no-pie -c globals.c
 
 sav_plan.o: sav_plan.c fh.h
 	cc -no-pie -c sav_plan.c

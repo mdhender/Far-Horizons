@@ -4,7 +4,7 @@ PRE2 = get_gal.o get_star.o get_plan.o do_inst.o get_transact.o do_neutral.o do_
 PRE3 = do_land.o do_unl.o do_mes.o do_orbit.o sav_transact.o do_send.o do_enemy.o
 PRE4 = sav_star.o sav_plan.o get_loc.o get_ship.o gam_abo.o do_name.o get_spnam.o dis_ship.o do_rep.o get_transfer.o
 
-PRE_OBJS = PreDeparture.o $(PRE1) $(PRE2) $(PRE3) $(PRE4)
+PRE_OBJS = PreDeparture.o globals.o $(PRE1) $(PRE2) $(PRE3) $(PRE4)
 
 PreDeparture: $(PRE_OBJS)
 	cc $(PRE_OBJS) -no-pie -o ../bin/PreDeparture
@@ -41,6 +41,9 @@ get_spnam.o: get_spnam.c fh.h
 
 get_ship.o: get_ship.c fh.h
 	cc -no-pie -c get_ship.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c
 
 do_tran.o: do_tran.c fh.h
 	cc -no-pie -c do_tran.c

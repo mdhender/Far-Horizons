@@ -3,8 +3,6 @@
  * events of the previous turn, plus status information for the current
  * turn. */
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

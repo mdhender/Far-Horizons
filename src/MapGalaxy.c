@@ -4,8 +4,6 @@
  * formfeed characters. If you do not like the results, you can always
  * edit the output file with any text editor. */
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

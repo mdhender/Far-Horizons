@@ -1,6 +1,6 @@
 /* This routine will create the "loc" array based on current species' data. */
 
-
+#include <stdlib.h>
 #include "fh.h"
 
 
@@ -12,6 +12,7 @@ extern struct nampla_data * nampla_base, *nampla;
 extern struct ship_data *   ship_base, *ship;
 extern struct sp_loc_data   loc[MAX_LOCATIONS];
 
+void add_location(char x, char y, char z);
 
 do_locations() {
     int i;
@@ -58,7 +59,7 @@ do_locations() {
 }
 
 
-
+void
 add_location(char x, char y, char z) {
     int i;
 

@@ -2,7 +2,7 @@
 NOO1 = utils.o parse.o
 NOO2 = get_gal.o get_plan.o get_star.o
 
-NOO_OBJS = NoOrders.o $(NOO1) $(NOO2)
+NOO_OBJS = NoOrders.o globals.o $(NOO1) $(NOO2)
 
 
 NoOrders: $(NOO_OBJS)
@@ -25,3 +25,6 @@ get_plan.o: get_plan.c fh.h
 
 get_star.o: get_star.c fh.h
 	cc -no-pie -c get_star.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c

@@ -6,10 +6,7 @@
  *      perform the reverse operation.
  */
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
-
 
 extern int num_stars, num_planets;
 

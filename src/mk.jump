@@ -3,7 +3,7 @@ JUMP1 = utils.o parse.o do_jump.o get_transact.o do_move.o do_vis.o
 JUMP2 = get_gal.o get_star.o get_plan.o sav_transact.o sav_star.o sav_plan.o
 JUMP3 = get_loc.o get_ship.o gam_abo.o dis_ship.o do_worm.o
 
-JUMP_OBJS = Jump.o $(JUMP1) $(JUMP2) $(JUMP3)
+JUMP_OBJS = Jump.o globals.o $(JUMP1) $(JUMP2) $(JUMP3)
 CC = cc -g -no-pie
 
 Jump: $(JUMP_OBJS)
@@ -38,6 +38,9 @@ get_loc.o: get_loc.c fh.h
 
 get_ship.o: get_ship.c fh.h
 	$(CC) -c get_ship.c
+
+globals.o: globals.c fh.h
+	$(CC) -c globals.c
 
 do_scan.o: do_scan.c fh.h
 	$(CC) -c do_scan.c

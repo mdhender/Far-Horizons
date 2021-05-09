@@ -1,9 +1,6 @@
 /* This program will generate files HS3 through HS9, which will be used later
  *      by the HomeSystem program to create home star systems. */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

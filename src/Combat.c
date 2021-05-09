@@ -13,9 +13,6 @@
  *      throughout the combat routines.
  */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 #include "combat.h"
 

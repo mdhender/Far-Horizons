@@ -3,9 +3,6 @@
  * specified, planets will not be listed. If the -w option is specified,
  * only wormhole locations will be listed. */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

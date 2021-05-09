@@ -1,5 +1,5 @@
 
-REP_OBJS = Report.o get_gal.o get_star.o get_plan.o utils.o
+REP_OBJS = Report.o globals.o get_gal.o get_star.o get_plan.o utils.o
 CC = cc -g -no-pie
 
 Report: $(REP_OBJS)
@@ -19,3 +19,6 @@ get_plan.o: get_plan.c fh.h
 
 get_star.o: get_star.c fh.h
 	$(CC) -c get_star.c
+
+globals.o: globals.c fh.h
+	$(CC) -c globals.c

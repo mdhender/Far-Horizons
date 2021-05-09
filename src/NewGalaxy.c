@@ -1,9 +1,6 @@
 /* This program will generate a completely new galaxy and write the results
  * to files "galaxy.dat", "stars.dat" and "planets.dat". */
 
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

@@ -1,8 +1,6 @@
 /* This program will generate default orders for a species if no explicit
  *      orders have been provided. */
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

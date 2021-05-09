@@ -2,8 +2,6 @@
  *      This program performs the reverse operation of BinaryToAscii.
  */
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 

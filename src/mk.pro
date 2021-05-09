@@ -4,7 +4,7 @@ PRO2 = get_gal.o get_plan.o do_recy.o sav_plan.o do_upg.o do_shipyard.o do_neutr
 PRO3 = gam_abo.o do_build.o do_res.o get_spnam.o do_hide.o do_ally.o get_transfer.o
 PRO4 = get_loc.o do_amb.o get_transact.o sav_transact.o do_int.o get_star.o
 
-PRO_OBJS = Production.o $(PRO1) $(PRO2) $(PRO3) $(PRO4)
+PRO_OBJS = Production.o globals.o $(PRO1) $(PRO2) $(PRO3) $(PRO4)
 
 Production: $(PRO_OBJS)
 	cc $(PRO_OBJS) -no-pie -o ../bin/Production
@@ -35,6 +35,9 @@ get_ship.o: get_ship.c fh.h
 
 get_spnam.o: get_spnam.c fh.h
 	cc -no-pie -c get_spnam.c
+
+globals.o: globals.c fh.h
+	cc -no-pie -c globals.c
 
 sav_plan.o: sav_plan.c fh.h
 	cc -no-pie -c sav_plan.c

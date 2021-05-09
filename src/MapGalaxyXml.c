@@ -1,7 +1,5 @@
 /* This program will output the map of the galaxy to the file "galaxy.xml"*/
 
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 #include <stdio.h>

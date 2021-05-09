@@ -1,9 +1,5 @@
 /* This is a modified non-interactive version of HomeSystem */
 
-
-
-#define THIS_IS_MAIN
-
 #include "fh.h"
 
 
