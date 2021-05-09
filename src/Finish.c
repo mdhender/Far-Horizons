@@ -32,11 +32,7 @@ extern struct trans_data	transaction[MAX_TRANSACTIONS];
 extern struct sp_loc_data	loc[MAX_LOCATIONS];
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, j, n, rec, don, nampla_index, ship_index, ls_needed,
 		ls_actual, tech, turn_number, percent_increase, old_tech_level,
@@ -1205,7 +1201,6 @@ clean_up:
 
 
 print_header ()
-
 {
     log_string ("\nOther events:\n");
     header_printed = TRUE;
@@ -1213,11 +1208,7 @@ print_header ()
 
 
 
-alien_is_visible (x, y, z, species_number, alien_number)
-
-char	x, y, z;
-int	species_number, alien_number;
-
+alien_is_visible (char x, char y, char z, int species_number, int alien_number)
 {
 
     int		i, j;

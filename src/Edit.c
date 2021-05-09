@@ -24,11 +24,7 @@ extern struct planet_data	*planet_base;
 
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, option, stars_modified, planets_modified, species_modified;
 
@@ -173,7 +169,6 @@ no_change:
 
 
 edit_star ()
-
 {
     int		i;
 
@@ -210,7 +205,6 @@ edit_star ()
 
 
 edit_planet ()
-
 {
     int		i, n, p, num_gases;
 
@@ -327,7 +321,6 @@ next_gas:
 
 
 edit_species ()
-
 {
     int		n, found, sp_index, species_number, option;
 
@@ -393,7 +386,6 @@ again:
 
 
 edit_species_stats ()
-
 {
     int		i, n, delete, array_index, bit_number;
 
@@ -635,7 +627,6 @@ next_enemy_mask:
 
 
 edit_nampla ()
-
 {
     int		i, n, nampla_number, index_changed, found;
 
@@ -832,7 +823,6 @@ next_item:
 
 
 create_nampla ()
-
 {
     int		i, found, unused_nampla_available, nampla_index;
 
@@ -916,7 +906,6 @@ create_nampla ()
 
 
 edit_ship ()
-
 {
     int		i, n, ship_number;
 
@@ -1075,7 +1064,6 @@ next_item:
 
 
 create_ship ()
-
 {
     int		i, found, unused_ship_available, ship_index;
 
@@ -1141,10 +1129,7 @@ create_ship ()
 
 
 
-int get_location (need_planet)
-
-int need_planet;
-
+int get_location (int need_planet)
 {
     int		i, found;
 
@@ -1204,10 +1189,7 @@ int need_planet;
 
 
 
-get_name (name)
-
-char	name[];
-
+get_name (char name[])
 {
     int		i;
     char	temp[1024];
@@ -1239,7 +1221,6 @@ again:
 
 
 get_value ()
-
 {
     char	temp[1024];
 

@@ -21,11 +21,7 @@ extern struct planet_data	*planet_base;
 
 
 
-main (argc, argv)
-
-int argc;
-char *argv[];
-
+main (int argc, char *argv[])
 {
     int		i, j, n, star_index, total_planets, list_planets, usage_error,
 		type_count[10], num_gases, home_system, total_wormstars,
@@ -213,10 +209,7 @@ done:
 }
 
 
-print_LSN (planet, home_planet)
-
-struct planet_data	*planet, *home_planet;
-
+print_LSN (struct planet_data *planet, struct planet_data *home_planet)
 {
     /* This routine provides an approximate LSN for a planet. It assumes
 	that oxygen is required and any gas that does not appear on the
