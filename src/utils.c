@@ -9,10 +9,8 @@ static unsigned long	_lastRandom = 1924085713L;	// random seed
 
 unsigned long	last_random = 1924085713L;	/* Random seed. */
 
-int rnd (max)
-
-unsigned int	max;
-
+int
+rnd (unsigned int max)
 {
 	unsigned long	a, b, c, cong_result, shift_result;
 
@@ -58,7 +56,6 @@ extern struct galaxy_data	galaxy;
 
 
 get_species_data ()
-
 {
     int		species_fd, species_index;
 
@@ -144,7 +141,6 @@ get_species_data ()
 
 
 save_species_data ()
-
 {
     int		species_fd, species_index;
 
@@ -210,7 +206,6 @@ save_species_data ()
 
 
 free_species_data ()
-
 {
     int		species_index;
 
@@ -234,10 +229,7 @@ free_species_data ()
 
 /* The following two routines will delete a ship or nampla record. */
 
-delete_ship (ship)
-
-struct ship_data	*ship;
-
+delete_ship (struct ship_data *ship)
 {
 	int	i;
 
@@ -254,10 +246,7 @@ struct ship_data	*ship;
 }
 
 
-delete_nampla (nampla)
-
-struct nampla_data	*nampla;
-
+delete_nampla (struct nampla_data *nampla)
 {
 	int	i;
 
@@ -281,10 +270,8 @@ struct nampla_data	*nampla;
 
 char	result_plus_commas[33];
 
-char *commas (value)
-
-long	value;
-
+char *
+commas (long value)
 {
     int		i, j, n, length, negative;
 
@@ -339,10 +326,8 @@ int	ignore_field_distorters = FALSE;
 
 char	full_ship_id[64];
 
-char *ship_name (ship)
-
-struct ship_data	*ship;
-
+char *
+ship_name (struct ship_data	*ship)
 {
     int		effective_age, status, ship_is_distorted;
 
@@ -454,10 +439,7 @@ int	log_stdout = TRUE;
 char	log_line[128];
 
 
-log_char (c)
-
-char	c;
-
+log_char (char c)
 {
     int		i, temp_position;
 
@@ -527,10 +509,7 @@ char	c;
 }
 
 
-log_string (string)
-
-char	string[];
-
+log_string (char string[])
 {
     int		i, length;
 
@@ -543,10 +522,7 @@ char	string[];
 }
 
 
-log_int (value)
-
-int	value;
-
+log_int (int value)
 {
     char	string[16];
 
@@ -558,10 +534,7 @@ int	value;
 }
 
 
-log_long (value)
-
-long	value;
-
+log_long (long value)
 {
     char	string[16];
 
@@ -579,7 +552,6 @@ int			num_locs = 0;
 struct sp_loc_data	loc[MAX_LOCATIONS];
 
 get_location_data ()
-
 {
     int		locations_fd;
 
@@ -613,7 +585,6 @@ get_location_data ()
 
 
 save_location_data ()
-
 {
     int		locations_fd;
 
@@ -654,10 +625,8 @@ save_location_data ()
 	variable 'species_number' is the same number used in filename
 	creation for the species. */
 
-int distorted (species_number)
-
-int	species_number;
-
+int
+distorted (int species_number)
 {
 	int	i, j, n, ls;
 
@@ -676,10 +645,8 @@ int	species_number;
 	return n;
 }
 
-int undistorted (distorted_species_number)
-
-int	distorted_species_number;
-
+int
+undistorted (int distorted_species_number)
 {
     int		i, species_number;
 
@@ -697,10 +664,7 @@ int	distorted_species_number;
 
 
 
-log_message (message_filename)
-
-char	*message_filename;
-
+log_message (char *message_filename)
 {
     char	message_line[256];
 
@@ -728,10 +692,8 @@ char	*message_filename;
    return TRUE if the nampla is populated or FALSE if not. It will also
    check if a message associated with this planet should be logged. */
 
-int check_population (nampla)
-
-struct nampla_data	*nampla;
-
+int
+check_population (struct nampla_data *nampla)
 {
 	int	is_now_populated, was_already_populated;
 
@@ -781,11 +743,8 @@ struct nampla_data	*nampla;
 
 /* Get life support tech level needed. */
 
-int life_support_needed (species, home, colony)
-
-struct species_data	*species;
-struct planet_data	*home, *colony;
-
+int
+life_support_needed (struct species_data *species, struct planet_data *home, struct planet_data *colony)
 {
     int	i, j, k, ls_needed;
 
@@ -821,10 +780,7 @@ struct planet_data	*home, *colony;
 
 
 
-check_high_tech_items (tech, old_tech_level, new_tech_level)
-
-int	tech, old_tech_level, new_tech_level;
-
+check_high_tech_items (int tech, int old_tech_level, int new_tech_level)
 {
     int		i;
 
@@ -862,10 +818,8 @@ int	tech, old_tech_level, new_tech_level;
    best match is less than the highest score.  A non-10000 score will never
    be higher than the length of the correct string. */
 
-int agrep_score (correct_string, unknown_string)
-
-char	*correct_string, *unknown_string;
-
+int
+agrep_score (char *correct_string, char *unknown_string)
 {
     int	score;
 
@@ -930,10 +884,8 @@ extern struct star_data		*star_base;
    star. If the star exists, TRUE will be returned; otherwise, FALSE will
    be returned. */
 
-int star_visited (x, y, z)
-
-int	x, y, z;
-
+int
+star_visited (int x, int y, int z)
 {
     int		i, found, species_array_index, species_bit_number;
 
