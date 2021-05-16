@@ -25,7 +25,11 @@ int rnd(unsigned int max) {
 
     a = last_random & 0x0000FFFF;
 
+    #ifndef FH_32BIT_64BIT_COMPATIBLE_RND
+    return((int)((a * (long)max) >> 16) + 1L);
+    #else
     return((int)((a * max) >> 16) + 1L);
+    #endif
 }
 
 int main() {
