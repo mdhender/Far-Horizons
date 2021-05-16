@@ -3,7 +3,11 @@
 unsigned long last_random = 1924085713L;
 
 int rnd(unsigned int max) {
+    #ifndef FH_32BIT_64BIT_COMPATIBLE_RND
     unsigned long a, b, c, cong_result, shift_result;
+    #else
+    unsigned int a, b, c, cong_result, shift_result;
+    #endif
 
     /* For congruential method, multiply previous value by the prime number 16417. */
     a           = last_random;
@@ -21,10 +25,11 @@ int rnd(unsigned int max) {
 
     a = last_random & 0x0000FFFF;
 
-    return((int)((a * (long)max) >> 16) + 1L);
+    return((int)((a * max) >> 16) + 1L);
 }
 
 int main() {
+    printf("sizeof(int) %ld sizeof(long) %ld\n", sizeof(int), sizeof(long));
     int i, r;
     for (i = 0; i < 1000000; i++) {
         r = rnd(1024*1024);
